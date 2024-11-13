@@ -1,0 +1,5 @@
+﻿@media (max-width: 1024px) {
+    .nav-link.green-button {
+        display: none !important;
+    }
+}

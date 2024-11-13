@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Оцініть свої знання";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareKnowlegeRating.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+@* <link rel="stylesheet" href="~/css/Questionare/Background/Rectangles.css" /> *@
+
+<div class=" top-left"></div>
+<div class=" top-right"></div>
+<div class=" bottom-left"></div>
+<div class=" bottom-right"></div>
+
+<div class="container">
+    <h1>ОЦІНИ СВОЇ ЗНАННЯ</h1>
+    <form action="/ourTeachers" method="post" id="ratingForm">
+        <input type="hidden" value="NOT IMPLEMENTED" id="KnownlegeRating" name="KnownlegeRating" />
+        <div class="content">
+            <div class="stripe" id="submitStripe-1">
+                <div class="stars">
+                    <div class="star "></div>
+                    <div class="star grey"></div>
+                    <div class="star grey"></div>
+                    <div class="star grey"></div>
+                    <div class="star grey"></div>
+                </div>
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/2_Knoweledge/OneStarMemoji.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="stripe" id="submitStripe-2">
+                <div class="stars">
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star grey"></div>
+                    <div class="star grey"></div>
+                    <div class="star grey"></div>
+                </div>
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/2_Knoweledge/TwoStarMemoji.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="stripe" id="submitStripe-3">
+                <div class="stars">
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star grey"></div>
+                    <div class="star grey"></div>
+                </div>
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/2_Knoweledge/ThreeStarMemoji.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="stripe" id="submitStripe-4">
+                <div class="stars">
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star grey"></div>
+                </div>
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/2_Knoweledge/FourStarMemoji.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="stripe" id="submitStripe-5">
+                <div class="stars">
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star "></div>
+                    <div class="star"></div>
+                </div>
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/2_Knoweledge/FiveStarMemoji.png" />
+                    </div>
+                </div>
+            </div>
+            @* <button class="go-forward" type="submit">Идите вперед</button> *@
+        </div>
+    </form>
+</div>
+    
+<script>
+    var ratingInput = document.getElementById('KnownlegeRating');
+    var form = document.getElementById('ratingForm');
+
+    function submitRating(rating) {
+        ratingInput.value = rating;
+        form.submit();
+    }
+
+    document.getElementById('submitStripe-1').addEventListener('click', function () {
+        submitRating(1);
+    });
+    document.getElementById('submitStripe-2').addEventListener('click', function () {
+        submitRating(2);
+    });
+    document.getElementById('submitStripe-3').addEventListener('click', function () {
+        submitRating(3);
+    });
+    document.getElementById('submitStripe-4').addEventListener('click', function () {
+        submitRating(4);
+    });
+    document.getElementById('submitStripe-5').addEventListener('click', function () {
+        submitRating(5);
+    });
+</script>

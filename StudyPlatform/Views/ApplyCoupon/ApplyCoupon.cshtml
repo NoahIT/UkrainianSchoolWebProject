@@ -1,0 +1,60 @@
+﻿@model StudyPlatform.ViewModels.ApplyCouponViewModel
+
+@{
+    ViewData["Title"] = "Применить купон";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    .login-container {
+        margin-top: 60px !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Login/login.css" />
+<link rel="stylesheet" href="~/css/PasswordRecovery/passwordRecovery.css" />
+<link rel="stylesheet" href="~/css/siteMinmal.css" />
+<link rel="stylesheet" href="~/css/ApplyCoupon/applyCoupon.css" />
+
+<div class="login-main-container">
+    <div class="top-bar">
+        <div class="line"></div>
+        <a class="close-btn" asp-area="" asp-controller="Home" asp-action="Index">X</a>
+    </div>
+    <div class="login-container">
+        <h2>КУПОН</h2>
+        <form action="/apply-coupon" method="post" class="login-form">
+            <div class="login-box-recovery">
+                <img class="coupon-memoji" src="~/Images/HomePage/ApplyCoupon/couponApplyMemoji.png" />
+                <div class="form-group">
+                    <label for="coupon" class="control-label">Купон</label>
+                    <input type="text" id="coupon" name="code" class="form-control" placeholder="Введите номер купона" value="@(Model.ActiveCoupon != null ? Model.ActiveCoupon.Code : "")" required>
+                    @if (Model.ActiveCoupon != null)
+                    {
+                        <label class="control-label discount-info-label">Розмір знижки: @Model.ActiveCoupon.DiscountPercentage %</label>
+                    }
+                    @if (TempData["isSuccess"] != null)
+                    {
+                        if ((bool)TempData["isSuccess"])
+                        {
+                            <div class="alert alert-success">Купон успішно застосовано!</div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger">Помилка: Купон недійсний або вже використаний.</div>
+                        }
+                    }
+
+                </div>
+            </div>
+            <div class="form-group-buttons">
+                <button type="submit" class="btn btn-primary">Відправити</button>
+                <a type="button" class="btn btn-secondary" href="/">Повернутися назад</a>
+            </div>
+        </form>
+    </div>
+    <div class="bottom-bar">
+        <div class="line line-bottom"></div>
+    </div>
+</div>
+

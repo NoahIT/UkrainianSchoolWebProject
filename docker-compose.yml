@@ -1,0 +1,59 @@
+services:
+  studyplatform:
+    build:
+      context: .
+      dockerfile: StudyPlatform/Dockerfile
+    ports:
+      - "7156:7156"  # HTTPS порт
+      - "5002:5002"  # HTTP порт
+    environment:
+      - ASPNETCORE_URLS=https://+:7156;http://+:5002
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/etc/nginx/ssl/cert.pem
+      - ASPNETCORE_Kestrel__Certificates__Default__KeyPath=/etc/nginx/ssl/key.pem
+    volumes:
+      - ./nginx/ssl/cert.pem:/etc/nginx/ssl/cert.pem:ro
+      - ./nginx/ssl/key.pem:/etc/nginx/ssl/key.pem:ro
+
+  streamserver:
+    build:
+      context: ./StreamServer
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"  # HTTPS порт
+      - "5000:5000"  # HTTP порт
+    environment:
+      - ASPNETCORE_URLS=https://+:5001;http://+:5000
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/etc/nginx/ssl/cert.pem
+      - ASPNETCORE_Kestrel__Certificates__Default__KeyPath=/etc/nginx/ssl/key.pem
+    volumes:
+      - ./nginx/ssl/cert.pem:/etc/nginx/ssl/cert.pem:ro
+      - ./nginx/ssl/key.pem:/etc/nginx/ssl/key.pem:ro
+
+  chatserver:
+    build:
+      context: ./ChatServer
+      dockerfile: Dockerfile
+    ports:
+      - "7079:7079"  # HTTPS порт
+      - "5210:5210"  # HTTP порт
+    environment:
+      - ASPNETCORE_URLS=https://+:7079;http://+:5210
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/etc/nginx/ssl/cert.pem
+      - ASPNETCORE_Kestrel__Certificates__Default__KeyPath=/etc/nginx/ssl/key.pem
+    volumes:
+      - ./nginx/ssl/cert.pem:/etc/nginx/ssl/cert.pem:ro
+      - ./nginx/ssl/key.pem:/etc/nginx/ssl/key.pem:ro
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/ssl/cert.pem:/etc/nginx/ssl/cert.pem:ro
+      - ./nginx/ssl/key.pem:/etc/nginx/ssl/key.pem:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - studyplatform
+      - streamserver
+      - chatserver

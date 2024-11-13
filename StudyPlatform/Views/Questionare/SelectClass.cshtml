@@ -1,0 +1,74 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Виберіть свій клас";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareSelectClass.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+
+<div class=" top-right"></div>
+<div class=" bottom-right"></div>
+<div class=" top-left"></div>
+
+<div class="questionmark-top-left">
+    <img src="~/Images/QuestionareImages/6_Class/Questionmark.png" />
+</div>
+<div class="questionmark-top-right">
+    <img src="~/Images/QuestionareImages/6_Class/Questionmark.png" />
+</div>
+<div class="questionmark-bottom-left">
+    <img src="~/Images/QuestionareImages/6_Class/Questionmark.png" />
+</div>
+<div class="questionmark-bottom-right">
+    <img src="~/Images/QuestionareImages/6_Class/Questionmark.png" />
+</div>
+
+<div class="container">
+    <h1>ОБЕРИ СВІЙ КЛАС</h1>
+    <form action="/learningTarget" method="post" onsubmit="return validateForm()">
+        <div class="content">
+            <label class="option">
+                Навчаюся в 10 класі
+                <input type="radio" name="grade" value="10">
+                <span class="checkmark"></span>
+            </label>
+            <label class="option">
+                Навчаюся в 11 класі
+                <input type="radio" name="grade" value="11">
+                <span class="checkmark"></span>
+            </label>
+            <div class="male-memoji">
+                <img src="~/Images/QuestionareImages/6_Class/MaleMemoji.png" />
+            </div>
+            
+            <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+            <input type="hidden" name="Motivation" value="@Model.Motivation" />
+        
+            <input type="hidden" name="LearningFormat" id="LearningFormat" value="@Model.LearningFormat" />
+            <input type="hidden" name="Class" id="Class" value="" />
+            <button class="go-forward" type="submit">Ідіть уперед</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var selectedGrade = document.querySelector('input[name="grade"]:checked');
+
+        if (selectedGrade === null) {
+            alert("Пожалуйста, выберите свой класс.");
+            return false; 
+        }
+
+        document.getElementById('Class').value = selectedGrade.value;
+
+        return true; 
+    }
+</script>

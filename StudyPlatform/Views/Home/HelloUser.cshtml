@@ -1,0 +1,157 @@
+﻿@using Castle.Components.DictionaryAdapter.Xml
+@using DAL.Models
+@model StudyPlatform.ViewModels.HelloUserViewModel
+@{
+    ViewData["Title"] = "Привітання";
+}
+
+<style>
+    .user-subjects {
+        margin-bottom: -300px;
+    }
+    .my-classes-content-row {
+        display: flex;
+        gap: 30px;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/HelloUser/HelloUser.css" />
+<link rel="stylesheet" href="~/css/HelloUser/HelloUserModules.css" />
+<link rel="stylesheet" href="~/css/HelloUser/HelloUserMyClassesEntry.css" />
+<link rel="stylesheet" href="~/css/HelloUser/HelloUserMyClasses.css" />
+
+<div class="container">
+    <div class="hello-user-greeting-content">
+        <h1>
+            Привет, @Model.Login 
+            <img class="male-memoji" src="~/Images/HelloUserPage/15 5.png" />
+        </h1>
+    </div>
+
+    @if (!Model.IsValidSubscriptions)
+    {
+        <div class="my-classes-entry-content">
+            <div class="my-classes-entry-column">
+                <a class="move-forward" disabled>
+                    МОИ УРОКИ
+                    <img class="loading-black-wheel" src="~/Images/HowThisWorksImages/HowThisWorksIcon LoadingBlack.png" />
+                    <img class="lock-icon" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                </a>
+            </div>
+            <div class="my-classes-entry-column-blue">
+                <div class="white-test-content">
+                    Уроки закриті - придбай підписку щоб користуватися всіма матеріалами та перевагами
+                </div>
+                <div class="female-memoji">
+                    <img src="~/Images/HelloUserPage/femaleExplosivememoji.png" />
+                </div>
+                <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">КУПИТИ УРОКИ</a>
+            </div>
+        </div>
+
+        <div class="my-classes-content" style="margin-bottom: 150px; margin-top: 150px;">
+            <h1>ЖИВІ УРОКИ</h1>
+            <div class="my-classes-info">
+                <div class="my-classes-column">
+                    <img src="~/Images/HelloUserPage/Ellipse 51.png" />
+                    <div class="class-details">
+                        <h1>ТЕМА УРОКУ</h1>
+                        <h2>ПІБ вчителя (дата)</h2>
+                        <img class="lock-icon-b" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                    </div>
+                </div>
+                <div class="my-classes-column">
+                    <img src="~/Images/HelloUserPage/Ellipse 54.png" />
+                    <div class="class-details">
+                        <h1>ТЕМА УРОКУ</h1>
+                        <h2>ПІБ вчителя (дата)</h2>
+                        <img class="lock-icon-b" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                    </div>
+                </div>
+                <div class="my-classes-column">
+                    <img src="~/Images/HelloUserPage/Ellipse 53.png" />
+                    <div class="class-details">
+                        <h1>ТЕМА УРОКУ</h1>
+                        <h2>ПІБ вчителя (дата)</h2>
+                        <img class="lock-icon-b" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                    </div>
+                </div>
+            </div>
+            <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">КУПИТИ УРОКИ</a>
+        </div>
+    }
+    else
+    {
+        @await Component.InvokeAsync("Schedule", new { schedules = Model.MySchedule})
+
+        <div class="calendar-transator-buttons">
+            <button class="move-forward text-center" data-bs-toggle="modal" data-bs-target="#liveStreamModal">ПРИЄДНАТИСЯ <br> ДО ТРАНСЛЯЦІЇ</button>
+            
+            <button class="move-forward text-center" data-bs-toggle="modal" data-bs-target="#lessonsModal">ПОПЕРЕДНІ<br>ТРАНСЛЯЦІЇ</button>
+        </div>
+
+        @await Component.InvokeAsync("LessonsMainPage")
+    }
+
+    <div class="user-subjects">
+        @await Component.InvokeAsync("Subjects")
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="liveStreamModal" tabindex="-1" aria-labelledby="liveStreamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="liveStreamModalLabel">Виберіть урок для трансляції</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <!-- Центрирование -->
+                @{
+                    var lessons = Model?.MySchedule
+                        .Select(x => x.Teacher.Subject)
+                        .DistinctBy(subject => new { subject.AbbrSubject, subject.GradeClass })
+                        .ToList();
+                    foreach (var lesson in lessons ?? new List<Subject>())
+                    {
+
+                        <a class="move-forward d-block" style="margin-bottom: 20px;" href="@Url.Action("LiveStream", "LiveStream", new { s = lesson.Id })">
+                            @lesson.Name, @((int)lesson.GradeClass) КЛАС
+                        </a>}
+
+                }
+            </div>
+            @* <div class="modal-footer">
+                <button type="button" class="btn btn-secondary move-forward" data-bs-dismiss="modal">Закрыть</button>
+            </div> *@
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="lessonsModal" tabindex="-1" aria-labelledby="lessonsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="lessonsModalLabel">Виберіть урок</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                    @{
+                    foreach (var lesson in lessons ?? new List<Subject>())
+                        {
+                            int? x = (int)lesson.GradeClass;
+
+                            <a class="move-forward d-block" style="margin-bottom: 20px;" href="@Url.Action("BuyClasses", "BuyClasses", new { subject = lesson.AbbrSubject, klass=x })">
+                            @lesson.Name, @((int)lesson.GradeClass) КЛАС
+                            </a>
+                        }
+                    }
+            </div>
+            @* <div class="modal-footer">
+                <button type="button" class="btn btn-secondary move-forward" data-bs-dismiss="modal">Закрыть</button>
+            </div> *@
+        </div>
+    </div>
+</div>

@@ -1,0 +1,427 @@
+﻿
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 130px 0 250px 0;
+}
+
+.new-callendar-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 100px;
+    align-items: stretch;
+}
+
+.card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    
+}
+
+.math-header {
+    background: linear-gradient(90deg, rgba(59,109,199,0.1) 0%, rgba(34,80,217,0.5) 100%);
+}
+
+.history-header {
+    background: linear-gradient(90deg, rgba(199,59,59,0.1) 0%, rgba(217,167,34,0.5) 100%);
+}
+
+.ukr-language-header {
+    background: linear-gradient(90deg, rgba(199,123,59,0.1) 0%, rgba(217,34,107,0.5) 100%);
+}
+
+.new-callendar-container .card {
+    flex: 1 1 30%;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+}
+
+.card img {
+    margin: 10px; 
+    width: 48px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+table {
+    width: 900px;
+}
+
+th, td {
+    border: 1.5px solid #229ED9;
+    padding: 8px;
+    text-align: center;
+    height: 80px;
+    max-width: 60px;
+    padding: 10px;
+}
+
+.calendar-content h1 {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.calendar-content h1, .new-cal-h {
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.null-time-column {
+    border-top: none;
+    border-left: none;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+.time-column {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.math, .history, .language {
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgb(68, 59, 59, 0.4) 3.5px 3.5px 0px 0px;
+    margin-top: 10px;
+}
+
+.math {
+    background-color: rgb(187, 199, 59, 0.5);
+}
+
+.history {
+    background-color: rgb(34, 158, 217, 0.4);
+}
+
+.language {
+    background-color: rgb(68, 59, 59, 0.3);
+}
+
+    .math:hover, .history:hover, .language:hover {
+        background-color: white;
+        box-shadow: none;
+        border: 1.5px solid rgb(68, 59, 59, 0.3);
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+.dropdown-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: #229ED9;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.badge {
+    color: black;
+    padding: 0;
+}
+
+    .badge svg {
+        width: 22px;
+        height: 22px;
+    }
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown-custom:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    transition: 0.2s ease-in-out;
+}
+
+.custom-dropdown-background {
+    width: 200px;
+    background-color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 1024px) {
+
+    .new-callendar-container {
+        margin-top: 50px;
+    }
+
+    .calendar-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    table {
+        width: 100%;
+        table-layout: auto;
+        overflow: hidden;
+    }
+
+    table, th, td {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+    /*   
+    td {
+        border-right: none;
+        border-left: none;
+    }*/
+
+    .time-column {
+        font-size: 1rem;
+        border: 1px solid;
+    }
+
+    td:last-child {
+        border-right: 1px solid;
+    }
+
+    th {
+        font-size: 1.25rem;
+    }
+
+    .math, .history, .language {
+        width: 100%;
+        word-wrap: break-word;
+        height: auto;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    /*    tr:has(> .math) td:not(:first-child):not(:has(> div)),
+    tr:has(> .history) td:not(:first-child):not(:has(> div)),
+    tr:has(> .language) td:not(:first-child):not(:has(> div)) {
+        display: none;
+    }*/
+}
+
+@media(max-width: 430px) {
+    .card-header h3 {
+        font-size: 1rem;
+    }
+
+    .card-header img {
+        width: 30px;
+    }
+}
+
+@media(max-width: 375px) {
+
+    .card-header h3 {
+        padding: 5px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .card-header img {
+        display: none;
+    }
+
+    .new-callendar-container {
+        gap: 20px;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.calendar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 130px 0 250px 0;
+}
+
+table {
+    width: 900px;
+}
+
+th, td {
+    border: 1.5px solid #229ED9;
+    padding: 8px;
+    text-align: center;
+    height: 80px;
+    max-width: 60px;
+    padding: 10px;
+}
+
+.calendar-content h1 {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.calendar-content h1 {
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.null-time-column {
+    border-top: none;
+    border-left: none;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+.time-column {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.math, .history, .language {
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgb(68, 59, 59, 0.4) 3.5px 3.5px 0px 0px;
+    margin-top: 10px;
+}
+
+.math {
+    background-color: rgb(187, 199, 59, 0.5);
+}
+
+.history {
+    background-color: rgb(34, 158, 217, 0.4);
+}
+
+.language {
+    background-color: rgb(68, 59, 59, 0.3);
+}
+
+    .math:hover, .history:hover, .language:hover {
+        background-color: white;
+        box-shadow: none;
+        border: 1.5px solid rgb(68, 59, 59, 0.3);
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+.dropdown-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: #229ED9;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.badge{
+    color: black;
+    padding: 0;
+}
+
+    .badge svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .dropdown-item {
+        cursor: pointer;
+    }
+
+.dropdown-custom:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    transition: 0.2s ease-in-out;
+}
+
+.custom-dropdown-background {
+    width: 200px;
+    background-color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 1024px){
+    .calendar-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    table {
+        width: 100%;
+        table-layout: auto;
+        overflow: hidden;
+    }
+
+    table, th, td {
+        font-size: 0.75rem;
+        padding: 5px;
+    }*/
+    /*   
+    td {
+        border-right: none;
+        border-left: none;
+    }*/
+
+    /*.time-column {
+        font-size: 1rem;
+        border: 1px solid;
+    }
+
+    td:last-child {
+        border-right: 1px solid;
+    }
+
+    th {
+        font-size: 1.25rem;
+    }
+
+    .math, .history, .language {
+        width: 100%;
+        word-wrap: break-word;
+        height: auto;
+        text-align: center;
+        font-size: 0.75rem;
+    }*/
+
+    /*    tr:has(> .math) td:not(:first-child):not(:has(> div)),
+    tr:has(> .history) td:not(:first-child):not(:has(> div)),
+    tr:has(> .language) td:not(:first-child):not(:has(> div)) {
+        display: none;
+    }*/
+/*}*/

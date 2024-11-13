@@ -1,0 +1,329 @@
+﻿.worth-it-container,
+.wic-green-block,
+.wic-blue-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+    .worth-it-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 140px 0 40px 0;
+    }
+
+.first-content-level {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: lightgrey 3px 8px 4px 0px;
+}
+
+.second-content-level {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.second-content-level-green h2,
+.second-content-level-blue h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #BBC73B;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    height: 70px;
+    width: 250px;
+    border: 2px solid lightgrey;
+}
+
+.second-content-level-green h2 {
+    background-color: #BBC73B;
+}
+
+.second-content-level-blue h2 {
+    background-color: #229ED9;
+}
+
+.worth-it-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.wic-green-block {
+    border: 2px solid #BBC73B;
+    width: 300px;
+    border-radius: 30px;
+    height: 400px;
+}
+
+.wic-blue-block {
+    border: 2px solid #229ED9;
+    width: 300px;
+    border-radius: 30px;
+    height: 400px;
+}
+
+.wic-green-block .first-content-level {
+    background-color: #BBC73B;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.wic-blue-block .first-content-level {
+    background-color: #229ED9;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.wic-blue-block-memoji,
+.wic-blue-block-mark,
+.wic-blue-green-memoji,
+.wic-blue-green-mark,
+.wic-blue-circle,
+.wic-green-circle {
+    position: absolute;
+}
+
+.wic-blue-block-memoji,
+.wic-blue-green-memoji {
+    top: -60px;
+    right: -40px;
+    z-index: 2;
+}
+
+.wic-blue-block-mark,
+.wic-blue-green-mark {
+    bottom: 180px;
+    left: -11px;
+    border-radius: 50%;
+}
+
+.wic-blue-block-mark {
+    background-color: #BBC73B;
+}
+
+.wic-green-circle,
+.wic-blue-circle {
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+    border-radius: 50%;
+    top: -45px;
+    right: -30px;
+}
+
+.wic-blue-circle {
+    background-color: #229ED9;
+}
+
+.wic-green-circle {
+    background-color: #BBC73B;
+}
+
+@media (max-width: 1024px) {
+    .worth-it-content {
+        flex-direction: column;
+    }
+
+    .wic-green-circle,
+    .wic-blue-circle {
+        height: 80px;
+        width: 80px;
+        top: -40px;
+        right: -25px;
+    }
+
+    .worth-it-container h1 {
+        font-size: 2rem;
+        margin: 80px 0 40px 0;
+    }
+
+    .worth-it-container h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.worth-it-container,
+.wic-green-block,
+.wic-blue-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+    .worth-it-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 140px 0 40px 0;
+    }
+
+.first-content-level {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: lightgrey 3px 8px 4px 0px;
+}
+
+    .second-content-level {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+.second-content-level-green h2,
+.second-content-level-blue h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #BBC73B;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    height: 70px;
+    width: 250px;
+    border: 2px solid lightgrey;
+}
+
+.second-content-level-green h2 {
+    background-color: #BBC73B;
+}
+
+.second-content-level-blue h2 {
+    background-color: #229ED9;
+}
+
+    .worth-it-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .wic-green-block {
+        border: 2px solid #BBC73B;
+        width: 300px;
+        border-radius: 30px;
+        height: 400px;
+    }
+
+.wic-blue-block {
+    border: 2px solid #229ED9;
+    width: 300px;
+    border-radius: 30px;
+    height: 400px;
+}
+
+.wic-green-block .first-content-level {
+    background-color: #BBC73B;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.wic-blue-block .first-content-level {
+    background-color: #229ED9;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.wic-blue-block-memoji,
+.wic-blue-block-mark,
+.wic-blue-green-memoji,
+.wic-blue-green-mark,
+.wic-blue-circle,
+.wic-green-circle {
+    position: absolute;
+}
+
+.wic-blue-block-memoji,
+.wic-blue-green-memoji {
+    top: -60px;
+    right: -40px;
+    z-index: 2;
+}
+
+.wic-blue-block-mark,
+.wic-blue-green-mark {
+    bottom:180px;
+    left: -11px;
+    border-radius: 50%;
+}
+
+.wic-blue-block-mark {
+    background-color: #BBC73B;
+}
+
+.wic-green-circle,
+.wic-blue-circle {
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+    border-radius: 50%;
+    top: -45px;
+    right: -30px;
+}
+
+.wic-blue-circle {
+    background-color: #229ED9;
+}
+
+.wic-green-circle {
+    background-color: #BBC73B;
+}
+
+@media (max-width: 1024px){
+    .worth-it-content{
+        flex-direction: column;
+    }
+
+    .wic-green-circle,
+    .wic-blue-circle {
+        height: 80px;
+        width: 80px;
+        top: -40px;
+        right: -25px;
+    }
+
+    .worth-it-container h1 {
+        font-size: 2rem;
+        margin: 80px 0 40px 0;
+    }
+
+    .worth-it-container h3{
+        font-size: 1.1rem;
+    }
+}*/

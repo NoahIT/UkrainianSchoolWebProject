@@ -1,0 +1,369 @@
+﻿
+.my-classes-content, .my-classes-column,
+.class-details, .my-classes-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.my-classes-content {
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 100vw;
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin-top: 50px;
+    gap: 50px;
+    /*margin: 0;*/
+    margin-bottom: -300px;
+    margin-top: -50px;
+}
+
+.my-classes-info {
+    margin-bottom: 30px;
+}
+
+.my-classes-content-row {
+    display: flex;
+    gap: 30px;
+/*    margin-bottom: 100px;
+    margin-top: 100px;*/
+}
+
+.my-classes-content my-classes-content-row h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 350px 0 50px 0;
+}
+
+.my-classes-info {
+    flex-direction: row;
+    gap: 50px;
+}
+
+.my-classes-column {
+    gap: 30px;
+}
+
+.class-details {
+    position: relative;
+    border: 2px solid black;
+    padding: 30px;
+    gap: 20px;
+    border-radius: 30px 0px 30px 30px;
+    width: 150px;
+    height: 250px;
+}
+
+    .class-details h1 {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    .class-details h2 {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    .class-details img {
+        position: absolute;
+        width: 50px;
+        left: -30px;
+        bottom: -20px;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    outline: none;
+    padding: 0 10px;
+}
+
+    .arrow:hover {
+        color: #666; /* Hover effect for arrows */
+    }
+
+.mobile-arrow-button-container {
+    display: none;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 1024px) {
+    .mobile-arrows {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 100px;
+        z-index: 15;
+        bottom: -100px;
+    }
+
+    .mobile-arrows .arrow {
+        display: block;
+    }
+
+    .my-classes-info {
+        /*flex-direction: column;*/
+        height: auto;
+        gap: 0; /* Ensure no gap between items */
+    }
+
+    .my-classes-content {
+        height: fit-content;
+        /*margin-bottom: -400px;*/
+    }
+
+    .my-classes-content h1 {
+        margin: 0;
+    }
+
+    .my-classes-content-row {
+            gap: 0px;
+        }
+
+    .my-classes-column {
+        gap: 20px;
+        width: 100%; /* Make sure it takes full width */
+        justify-content: center;
+    }
+
+        .my-classes-column img {
+            width: 150px;
+        }
+
+    .class-details {
+        border-radius: 20px;
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+    }
+
+    .class-details img {
+            width: 50px;
+            height: 50px;
+        }
+    /* Display only one column at a time */
+    /*.my-classes-info .my-classes-column {
+        width: 100%;
+    }*/
+    /* Hide other columns except the first one */
+    /*.my-classes-info .my-classes-column:nth-child(n+2) {
+            display: none;
+        }*/
+    /* Show other columns by overriding the display rule with JavaScript */
+    .my-classes-info.show-next .my-classes-column {
+        display: flex; /* Show the current column */
+    }
+}
+
+@media (max-width: 680px) {
+    .my-classes-content {
+        margin: 0;
+        margin-bottom: -400px;
+    }
+
+    .my-classes-column img {
+        width: 100px;
+        height: auto;
+    }
+
+    .my-classes-info {
+        gap: 10px;
+    }
+
+    .class-details {
+        padding: 10px;
+        max-width: 200px;
+        width: 100%;
+    }
+
+    .class-details img {
+        width: 50px;
+        height: 50px;
+    }
+
+        .class-details h1 {
+            font-size: 0.9rem;
+        }
+
+        .class-details h2 {
+            font-size: 0.9rem;
+        }
+}
+
+@media (max-width: 425px) {
+
+/*    .my-classes-column img {
+        width: 100px;
+        height: auto;
+    }*/
+
+    .my-classes-content {
+        margin-bottom: -400px;
+    }
+
+    .my-classes-info {
+        gap: 10px;
+    }
+
+    .class-details {
+        padding: 5px;
+    }
+
+    .class-details img {
+        width: 50px;
+        height: 50px;
+    }
+
+        .class-details h1 {
+            font-size: 0.8rem;
+        }
+
+        .class-details h2 {
+            font-size: 0.6rem;
+        }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.my-classes-content, .my-classes-column,
+.class-details, .my-classes-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.my-classes-content {
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 100vw;
+    height: 500px;
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin-top: 100px;
+    gap: 50px;
+}
+
+.my-classes-info {
+    margin-bottom: 30px;
+}
+
+.my-classes-content-row {
+    display: flex;
+    gap: 30px;
+}
+
+.my-classes-content my-classes-content-row h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 350px 0 50px 0;
+}
+
+.my-classes-info {
+    flex-direction: row;
+    gap: 50px;
+}
+
+.my-classes-column {
+    gap: 30px;
+}
+
+    .my-classes-column img {
+        width: 250px;
+    }
+
+.class-details {
+    position: relative;
+    border: 2px solid black;
+    padding: 30px;
+    gap: 20px;
+    border-radius: 30px 0px 30px 30px;
+}
+
+    .class-details h1 {
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .class-details h2 {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    .class-details img {
+        position: absolute;
+        width: 70px;
+        left: -30px;
+        bottom: -20px;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+    padding: 0 10px;
+}
+
+    .arrow:hover {
+        color: #666;*/ /* Hover effect for arrows */
+    /*}
+
+.mobile-arrow-button-container {
+    display: none;
+}*/
+
+/* Adjustments for mobile view */
+/*@media (max-width: 1024px) {
+    .my-classes-info {
+        flex-direction: column;
+        height: auto;
+        gap: 0;*/ /* Ensure no gap between items */
+    /*}
+
+    .my-classes-content {
+        height: fit-content;
+    }
+
+    .my-classes-content-row {
+        gap: 5px;
+    }
+
+    .my-classes-column {
+        gap: 20px;
+        width: 100%;*/ /* Make sure it takes full width */
+        /*justify-content: center;
+    }
+
+    .class-details {
+        border-radius: 20px;
+        width: 100%;*/ /* Ensure it takes full width */
+    /*}*/
+
+    /* Display only one column at a time */
+    /*.my-classes-info .my-classes-column {
+        width: 100%;
+    }
+
+        .my-classes-info .my-classes-column:nth-child(n+2) {
+            display: none;*/ /* Hide other columns except the first one */
+        /*}*/
+
+    /* Show other columns by overriding the display rule with JavaScript */
+    /*.my-classes-info.show-next .my-classes-column {
+        display: flex;*/ /* Show the current column */
+    /*}
+}
+
+footer {
+    display: none;
+}*/

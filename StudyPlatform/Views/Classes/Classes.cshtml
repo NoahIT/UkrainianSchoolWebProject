@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Предмети";
+}
+
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesWhatYouGetContent.css" />
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageModulesContent.css" />
+<link rel="stylesheet" href="~/css/Classes/Classes.css" />
+
+
+<div class="classes-container">
+    @* Model showcase *@
+    <div class="module-container">
+        <h1>Предмети</h1>
+        <div class="module-content">
+            <div class="math-container">
+                <div class="icon-container-math">
+                    <div class="blue-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (1).png" />
+                </div>
+                <h1 class="module-name">Математика</h1>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="math">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+            <div class="history-container">
+                <div class="icon-container-history">
+                    <div class="grey-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (3).png" />
+                </div>
+                <h1 class="module-name">Історія</h1>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="history">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+            <div class="ukranian-container">
+                <div class="icon-container-ukranian">
+                    <div class="green-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (2).png" />
+                </div>
+                <h1 class="module-name">Українська мова</h1>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="language">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">Начать</a>
+    </div>
+
+    @*Helper information content*@
+    <div class="hellper-container">
+        <h1>Не знаєш з чого почати?</h1>
+        <div class="hellper-content">
+            <h1>
+                Дозволь нам допомогти, виконай невеликий тест, який займає 3 хвилини,
+                і ми допоможемо вибрати, що вчити, відштовхуючись від твоїх уподобань
+            </h1>
+            <img class="static-loading-img" src="~/Images/ClassesPage/StaticLoadingIcon.png" />
+            <img class="male-helper-img" src="~/Images/ClassesPage/MaleHelperMemoji.png" />
+        </div>
+
+        <div class="hellper-btn-container">
+            <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+            <a class="move-forward" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Начать</a>
+        </div>
+    </div>
+
+    @* Money back garuantee content *@
+    <div class="money-back-garuantee-container">
+        <h1>гарантія повернення грошей</h1>
+        <div class="mbg-content">
+            <img class="happy-female-with-books-img" src="~/Images/ClassesPage/HappyFemaleWithBooks.png" />
+            <img class="curve-black-arrow-img" src="~/Images/ClassesPage/CurveBlackArrow.png" />
+            <div class="text-mbg-content">
+                <h2>Протягом 14 днів ми надаємо можливість повернути гроші якщо вам не сподобалося як пройшов урок</h2>
+            </div>
+        </div>
+        <div class="female-memoji-decoration-content">
+            <img src="~/Images/ClassesPage/FemaleCelebratingMemoji.png" />
+            <img src="~/Images/ClassesPage/StaticLoadingIcon.png" />
+        </div>
+    </div>
+
+    <div class="connect-with-us-container">
+        <h1>Приєднуйся до нас!</h1>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Начать</a>
+    </div>
+</div>

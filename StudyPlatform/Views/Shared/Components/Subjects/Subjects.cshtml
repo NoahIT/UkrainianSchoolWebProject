@@ -1,0 +1,96 @@
+﻿@model BL.Models.HelloUserModel
+
+
+<div class="module-container">
+    <h1>ПРЕДМЕТЫ</h1>
+
+    <div class="module-content">
+
+        @if (Model.IsMathSubscription)
+        {
+            <div class="math-container">
+                <div class="icon-container-math">
+                    <div class="blue-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (1).png" />
+                </div>
+                <h2 class="module-name">Математика</h2>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="math">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="math-container-blocked">
+                <div class="icon-container-math">
+                    <div class="blue-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (1).png" />
+                </div>
+                <h2 class="module-name">Математика</h2>
+                <a class="module-button" href="#">
+                    <img class="lock-icon-c" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                </a>
+            </div>
+        }
+
+        @if (Model.IsHistorySubscription)
+        {
+            <div class="history-container">
+                <div class="icon-container-history">
+                    <div class="grey-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (3).png" />
+                </div>
+                <h2 class="module-name">История</h2>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="history">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="history-container-blocked">
+                <div class="icon-container-history">
+                    <div class="grey-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (3).png" />
+                </div>
+                <h2 class="module-name">История</h2>
+                <a class="module-button" href="#">
+                    <img class="lock-icon-c" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                </a>
+            </div>
+        }
+
+        @if (Model.IsUkranianSubscription)
+        {
+            <div class="ukranian-container">
+                <div class="icon-container-ukranian">
+                    <div class="green-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (2).png" />
+                </div>
+                <h2 class="module-name">Украинский язык</h2>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="language">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="ukranian-container-blocked">
+                <div class="icon-container-ukranian">
+                    <div class="green-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (2).png" />
+                </div>
+                <h2 class="module-name">Украинский язык</h2>
+                <a class="module-button" href="#">
+                    <img class="lock-icon-c" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                </a>
+            </div>
+        }
+    </div>
+    @if (!Model.IsAllSubscriptions)
+    {
+        <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">
+            КУПИТИ УРОКИ
+        </a>
+    }
+</div>

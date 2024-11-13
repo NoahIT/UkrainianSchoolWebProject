@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Календар";
+}
+
+<link rel="stylesheet" href="~/css/Calendar/calendar.css" />
+
+<style>
+    .calendar-content h1 {
+        display: none;
+    }
+
+    .calendar-container {
+        margin-top: 80px;
+    }
+</style>
+
+<div class="calendar-container">
+    @*  <div class="dropdown">
+        <button class="dropdown-toggle dropdown-custom" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            10 КЛАС <span class="badge badge-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+                </svg>
+            </span>
+        </button>
+        <ul class="dropdown-menu custom-dropdown-background" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#" onclick="selectClass('10 КЛАС')">10 КЛАС</a></li>
+            <li><a class="dropdown-item" href="#" onclick="selectClass('10 КЛАС')">11 КЛАС</a></li>
+        </ul>
+    </div> *@
+
+    @* @await Component.InvokeAsync("Schedule") *@
+    <div class="new-callendar-container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header math-header">
+                <img src="~/Images/Callendar/calculator.png" class="card-img-top" alt="calculator">
+                <h3>Математика</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Назва уроку, Час/дата уроку або інша інформація <span class="badge badge-success">New</span></p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header history-header">
+                <img src="~/Images/Callendar/history.png" class="card-img-top" alt="history">
+                <h3>История</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Назва уроку, Час/дата уроку або інша інформація/data</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header ukr-language-header">
+                <img src="~/Images/Callendar/language.png" class="card-img-top" alt="language">
+                <h3>Українська мова</h3>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">Назва уроку, Час/дата уроку або інша інформація</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header math-header">
+                <img src="~/Images/Callendar/calculator.png" class="card-img-top" alt="calculator">
+                <h3>Математика</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Назва уроку, Час/дата уроку або інша інформаціяo</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header history-header">
+                <img src="~/Images/Callendar/history.png" class="card-img-top" alt="history">
+                <h3>История</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Назва уроку, Час/дата уроку або інша інформація<span class="badge badge-primary">Завтра</span></p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header ukr-language-header">
+                <img src="~/Images/Callendar/language.png" class="card-img-top" alt="language">
+                <h3>Українська мова</h3>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">Назва уроку, Час/дата уроку або інша інформація</p>
+            </div>
+        </div>
+    </div>
+</div>

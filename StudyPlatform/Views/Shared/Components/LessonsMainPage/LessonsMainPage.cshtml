@@ -1,0 +1,139 @@
+﻿<div class="my-classes-content">
+    <h1>ЖИВЫЕ УРОКИ</h1>
+    
+    <div class="my-classes-content-row">
+        <button class="arrow left-arrow" onclick="previousLessons()" style="cursor: pointer;">&#9664;</button>
+        <div class="my-classes-info" id="lessonsContainer">
+        </div>
+        <button class="arrow right-arrow" onclick="nextLessons()" style="cursor: pointer;">&#9654;</button>
+    </div>
+</div>
+
+@Html.AntiForgeryToken()
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var currentIndex = 0;
+    var maxIndex = 0;
+
+    function loadLessons(pageIndex) {
+        $.ajax({
+            url: '@Url.Action("GetLessons", "Api")',
+            type: 'GET',
+            data: { pageIndex: pageIndex },
+            headers: {
+                'RequestVerificationToken': getAntiForgeryToken()
+            },
+            success: function (data) {
+                var lessonsContainer = $('#lessonsContainer');
+                if (data.length > 0) {
+                    lessonsContainer.empty();
+                    data.forEach(function (lesson) {
+                        lessonsContainer.append(
+                            `<div class="my-classes-column">
+                                <img src="${lesson.image}" alt="Lesson Image" />
+                                <div class="class-details">
+                                    <h1>${lesson.name}</h1>
+                                    <h2>${lesson.teacherName} <br> (${lesson.date})</h2>
+                                </div>
+                            </div>`
+                        );
+                    });
+
+                    maxIndex = data.length;
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("An error occurred: " + status + " " + error);
+            }
+        });
+    }
+
+    function previousLessons() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            loadLessons(currentIndex);
+        }
+    }
+
+    function nextLessons() {
+        if (currentIndex < maxIndex - 1) {
+            currentIndex++;
+            loadLessons(currentIndex);
+        }
+    }
+
+    function getAntiForgeryToken() {
+        return $('input[name="__RequestVerificationToken"]').val();
+    }
+
+    loadLessons(currentIndex);
+</script>
+
+
+@*     <script>
+        var currentIndex = 0;
+        var maxIndex = 0;
+
+        function getAntiForgeryToken() {
+            return $('input[name="__RequestVerificationToken"]').val();
+        }
+
+    // <img src="${lesson.image}" alt = "Lesson Image" />
+
+        function loadLessons(pageIndex) {
+            $.ajax({
+                url: '@Url.Action("GetLessons", "Api")',
+                type: 'GET',
+                data: { pageIndex: pageIndex },
+                headers: {
+                    'RequestVerificationToken': getAntiForgeryToken()
+                },
+                success: function (data) {
+                    var lessonsContainer = $('#lessonsContainer');
+                    if (data.length > 0) {
+                        lessonsContainer.empty();
+                        data.forEach(function (lesson) {
+                            lessonsContainer.append(
+                                `<div class="my-classes-column">
+                                
+                                <div class="class-details">
+                                    <h1>${lesson.name}</h1>
+                                    <h2>${lesson.teacherName} <br> (${lesson.date})</h2>
+                                </div>
+                            </div>`
+                            );
+                        });
+                        if (window.innerWidth <= 1024) {
+                            maxIndex = data.length; // Mobile: move one at a time
+                        } else {
+                            maxIndex = Math.ceil(data.length / 3); // Desktop: move three at a time
+                        }
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("An error occurred: " + status + " " + error);
+                }
+            });
+        }
+
+
+        function previousLessons() {
+            console.log(currentIndex);
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadLessons(currentIndex);
+            }
+        }
+
+        function nextLessons() {
+            console.log(currentIndex);
+
+            if (maxIndex === 3) {
+                currentIndex++;
+                loadLessons(currentIndex);
+             }
+        }
+
+        loadLessons(currentIndex);
+    </script> *@

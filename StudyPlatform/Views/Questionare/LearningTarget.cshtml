@@ -1,0 +1,78 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Вибір цілей навчання";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareLearningTarget.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+
+<div class=" top-left"></div>
+<div class=" top-right"></div>
+<div class=" bottom-left"></div>
+<div class=" bottom-right"></div>
+
+<div class="container">
+    <div class="thumbs-up">
+        <img src="~/Images/QuestionareImages/7_LearningTarget/GreyLike.png" />
+    </div>
+    <div class="circle">
+        <img src="~/Images/QuestionareImages/7_LearningTarget/OddCircle.png" />
+    </div>
+    <div class="super-tromboid">
+        <img src="~/Images/QuestionareImages/7_LearningTarget/SuperToroid.png" />
+    </div>
+
+    <h1>ОБЕРИ МЕТУ НАВЧАННЯ</h1>
+    <form class="content" action="/studyModules" method="post" onsubmit="return updateLearningTarget()">
+            <div class="checkbox-container">
+                <input type="checkbox" id="option1">
+            <label for="option1">Підготовка до іспиту</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option2">
+            <label for="option2">Бажання рости в предметах</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option3">
+            <label for="option3">Закриття прогалин у знаннях</label>
+            </div>
+   
+        
+        <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+        <input type="hidden" name="Motivation" value="@Model.Motivation" />
+        <input type="hidden" name="LearningFormat" value="@Model.LearningFormat" />
+
+        <input type="hidden" name="LearningTarget" id="LearningTarget" value="" />
+        <input type="hidden" name="Class" id="Class" value="@Model.Class" />
+
+        <button class="go-forward" type="submit">Ідіть уперед</button>
+    </form>
+    
+    <script>
+        function updateLearningTarget() {
+            const checkboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+            const selectedValues = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => {
+                    const label = document.querySelector(`label[for="${checkbox.id}"]`);
+                    return label ? label.textContent : '';
+                });
+
+            if (selectedValues.length === 0) {
+                alert("Пожалуйста, выберите хотя бы один вариант.");
+                return false; // Prevent form submission
+            }
+
+            document.getElementById('LearningTarget').value = selectedValues.join(', ');
+            return true; // Allow form submission
+        }
+
+    </script>
+</div>

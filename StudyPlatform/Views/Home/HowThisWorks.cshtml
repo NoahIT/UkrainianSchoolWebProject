@@ -1,0 +1,173 @@
+﻿@{
+    ViewData["Title"] = "Як це працює?";
+}
+
+@* <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs/http-streaming"></script>
+ *@
+
+<link rel="stylesheet" href="~/css/HowThisWorks/HowThisWorks.css" />
+<link rel="stylesheet" href="~/css/HowThisWorks/HowThisWorksWhyUs.css" />
+<link rel="stylesheet" href="~/css/HowThisWorks/WhereToStart.css" />
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageQuestionAnswer.css" />
+
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesWhatYouGetContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesVideoContent.css" />
+
+<div class="container" style="margin-top: 95px;">
+    @* Landing content *@
+    <div class="landing-content">
+        <h1 class="mobile-res-heading">ДАВАЙ ЗНАКОМИТЬСЯ</h1>
+        <div class="white-bg">
+            <h1>ВЧИСЯ З <br /> ПОСМІШКОЮ</h1>
+        </div>
+        <div class="grey-bg">
+            <h1>ДАВАЙ ЗНАКОМИТЬСЯ</h1>
+            <h2>Досягати результату ще ніколи <br /> не було так весело!</h2>
+            <img class="grin-one" src="~/Images/HowThisWorksImages/grin1.png"/>
+            <img class="grin-two" src="~/Images/HowThisWorksImages/grin2.png" />
+        </div>
+
+        <div class="landing-photo">
+            <img src="~/Images/HowThisWorksImages/LandingPhoto.png" />
+        </div>
+    </div>
+
+    @* Why us second *@
+    <div class="why-us-second-content">
+        <h1>ЧОМУ МИ?</h1>
+        <div class="why-us-second-content-main">
+            <div class="column-wus">
+                <div class="row-wus">
+                    <div class="icn-wus-img">
+                        <img src="~/Images/HowThisWorksImages/HowThisWorksIcon1.png" />
+                    </div>
+                    <label>Залучні та живі уроки, що залучають </label>
+                </div>
+                <label class="mobile-res-body">
+                    За урок молоді та юні викладачі залучають до дискусії, роблять
+                    вікторини та тести з призами, що б збільшити увагу всіх учнів
+                </label>
+                <div class="row-wus">
+                    <div class="icn-wus-img">
+                        <img src="~/Images/HowThisWorksImages/HowThisWorksIcon2.png" />
+                    </div>
+                    <label>Індивідуальна увага  </label>
+                </div>
+                <label class="mobile-res-body">
+                    Підняти руку - функція, завдяки якій можна поставити абсолютно будь-яке запитання
+                </label>
+                <div class="row-wus">
+                    <div class="icn-wus-img">
+                        <img src="~/Images/HowThisWorksImages/HowThisWorksIcon3.png" />
+                    </div>
+                    <label>Ігри та призи </label>
+                </div>
+                <label class="mobile-res-body">
+                    Гейміфікацією навчання ми прагнемо якомога більше залучити учнів до навчального процесу
+                </label>
+            </div>
+            <div class="column-wus-b">
+                <div class="row-wus-b">
+                    <label>
+                        За урок молоді та юні викладачі залучають до дискусії, роблять 
+                        вікторини та тести з призами, що б збільшити увагу всіх учнів
+                    </label>
+                </div>
+                <div class="row-wus-b">
+                    <label>
+                        Підняти руку - функція, завдяки якій можна поставити абсолютно будь-яке запитання
+                    </label>
+                </div><div class="row-wus-b">
+                    <label>
+                        Гейміфікацією навчання ми прагнемо якомога більше залучити учнів до навчального процесу
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Video *@
+    <div class="video-container">
+        <h1>ХІД РОБОТИ</h1>
+        <h2>Цікаво як ми проводимо уроки?</h2>
+        <div class="video-content">
+            <div class="video-memoji-hand">
+                <img src="~/Images/ReviewPlatformFeatures/memoji-hand-pointing-down.png" />
+            </div>
+            <div class="video">
+                <video id="my-video"
+                       class="video-js vjs-default-skin"
+                       controls
+                       preload="auto"
+                       data-setup='{}'>
+                    <source src="@ViewBag.HlsUrl" type="application/x-mpegURL">
+                </video>
+                <div class="video-shadow"></div>
+                <div class="dots">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">Начать</a>
+    </div>
+
+    @* Question-Answer *@
+    <div class="question-answer-content">
+        <h1>ПИТАННЯ - ВІДПОВІДЬ</h1>
+        <div class="question-answer-content-content">
+            <div class="question-1-content">
+                <div class="question-row">
+                    <h2>Скільки часу триває 1 урок?</h2>
+                    <div class="question-circle">01</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-2-content">
+                <div class="question-row">
+                    <h2>Яка максимальна кількість осіб у групі?</h2>
+                    <div class="question-circle">02</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-3-content">
+                <div class="question-row">
+                    <h2>Які умови повернення грошей?</h2>
+                    <div class="question-circle">03</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-4-content">
+                <div class="question-row">
+                    <h2>Чи можна обрати конкретного вчителя?</h2>
+                    <div class="question-circle">04</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+        </div>
+    </div>
+
+    @* Dont know where to start *@
+    <div class="where-to-start-content">
+        <h1>Не знаєш з <br />  чого почати? </h1>
+        <div class="wts-content">
+            <h2>
+                Дозволь нам допомогти, виконай невеличкий тест, що займає 3 хвилинки, і ми допоможемо вибрати,
+                що вчити відштовхуючись від твоїх уподобань
+            </h2>
+                <img class="loading-black" src="~/Images/HowThisWorksImages/HowThisWorksIcon LoadingBlack.png"/>
+                <img class="loading-green" src="~/Images/HowThisWorksImages/HowThisWorksIcon LoadingGreen.png" />
+                <img class="male-memoji-wts" src="~/Images/HowThisWorksImages/HowThisWorksIcon MaleMemoji.png" />
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Начать</a>
+    </div>
+</div>
+
+<script>
+    var player = videojs('my-video');
+    player.play();
+</script>

@@ -1,0 +1,43 @@
+﻿@model StudyPlatform.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Деталі оплати";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/Login/login.css" />
+<link rel="stylesheet" href="~/css/siteMinmal.css" />
+
+<div class="login-main-container">
+    <div class="top-bar">
+        <div class="line"></div>
+        <a class="close-btn" asp-area="" asp-controller="Home" asp-action="Index">X</a>
+    </div>
+
+    <div class="login-container">
+
+        <h2>ОПЛАТА ПЛАНУ</h2>
+
+        <form action="/register-account" method="post" class="login-form">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="GradeClass" value="@Model.GradeClass"/>
+            <input type="hidden" name="SubscriptionId" value="@Model.SubscriptionId" />
+            <input type="hidden" name="SubjectsId" value="@Model.SubjectsId" />
+            <div class="login-box">
+                <div class="form-group">
+                    <label for="email" class="control-label">Пошта</label>
+                    <input type="email" id="email" name="Email" class="form-control" placeholder="вкажіть пошту" required>
+                    <div class="error">@Html.ValidationMessageFor(m => m.Email)</div>
+                </div>
+            </div>
+
+            <div class="form-group-buttons">
+                <button type="submit" class="btn btn-primary">До оплати.</button>
+                <a type="button" class="btn btn-secondary" href="/selectPlan">Повернутися назад</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="line line-bottom"></div>
+    </div>
+</div>

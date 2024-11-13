@@ -1,0 +1,460 @@
+﻿.classes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 300px;
+}
+
+.hellper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+    .hellper-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 100px 0 40px 0;
+    }
+
+.hellper-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #BBC73B;
+    width: 500px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 0px 30px 0 30px;
+}
+
+    .hellper-content h1 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 20px;
+        margin: 0;
+    }
+
+.static-loading-img,
+.male-helper-img {
+    position: absolute;
+}
+
+.static-loading-img {
+    width: 300px;
+    left: -100px;
+    z-index: -1;
+}
+
+.male-helper-img {
+    width: 250px;
+    right: -120px;
+    bottom: -150px;
+}
+
+.hellper-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.money-back-garuantee-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .money-back-garuantee-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 100px 0 40px 0;
+        background-color: #BBC73B;
+        width: 100vw;
+        text-align: center;
+        padding: 20px;
+    }
+
+.mbg-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.happy-female-with-books-img {
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.curve-black-arrow-img {
+    position: absolute;
+    width: 300px;
+    bottom: -100px;
+    left: 250px;
+}
+
+.text-mbg-content {
+    background-color: #595252;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 0px 30px 0 30px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-top: -50px;
+}
+
+    .text-mbg-content h2 {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: normal;
+        width: 360px;
+    }
+
+.female-memoji-decoration-content {
+    position: absolute;
+    display: none; /*SUTVARKYTI SITA*/
+}
+
+.connect-with-us-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 100vw;
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin-top: 60px;
+}
+
+    .connect-with-us-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 10px 0 40px 0;
+        background-color: #BBC73B;
+        width: 100vw;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        border: 2px solid black;
+    }
+
+    .connect-with-us-container h3 {
+        margin-bottom: 30px;
+    }
+
+@media (max-width: 1024px) {
+    .text-mbg-content h2 {
+        width: 250px;
+    }
+
+    .hellper-container h1 {
+        width: 300px;
+        text-align: center;
+    }
+
+    .hellper-content {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+        .hellper-content h1 {
+            text-align: center;
+        }
+
+    .static-loading-img {
+        width: 200px;
+        left: auto;
+        top: -120px;
+    }
+
+    .male-helper-img {
+        width: 200px;
+        top: -110px;
+        right: auto;
+        left: 40px;
+    }
+
+    .hellper-btn-container {
+        margin-top: -50px;
+    }
+
+    .mbg-content {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .text-mbg-content {
+        margin-top: 0px;
+    }
+
+    .curve-black-arrow-img {
+        position: absolute;
+        width: 200px;
+        bottom: 140px;
+        left: -100px;
+        transform: rotate(-120deg) scaleY(-1);
+    }
+}
+
+@media (max-width: 768px) {
+    .connect-with-us-container {
+        margin-bottom: -200px;
+    }
+
+    .module-container {
+        margin-top: 0px;
+    }
+
+    .classes-container {
+        margin-bottom: 400px;
+    }
+}
+
+@media (max-width: 425px) {
+    .classes-container {
+        margin-bottom: 500px;
+    }
+
+    .curve-black-arrow-img {
+        display: none;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.classes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 300px;
+}
+
+.hellper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+    .hellper-container h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 100px 0 40px 0;
+    }
+
+.hellper-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #BBC73B;
+    width: 500px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 0px 30px 0 30px;
+}
+
+    .hellper-content h1 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 20px;
+        margin: 0;
+    }
+
+.static-loading-img,
+.male-helper-img{
+    position: absolute;
+}
+
+.static-loading-img{
+    width: 300px;
+    left: -100px;
+    z-index: -1;
+}
+
+.male-helper-img {
+    width: 250px;
+    right: -120px;
+    bottom: -150px;
+}
+
+    .hellper-btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+.money-back-garuantee-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+    .money-back-garuantee-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 100px 0 40px 0;
+        background-color: #BBC73B;
+        width: 100vw;
+        text-align: center;
+        padding: 20px;
+    }
+
+.mbg-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+.happy-female-with-books-img{
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.curve-black-arrow-img {
+    position: absolute;
+    width: 300px;
+    bottom: -100px;
+    left: 250px;
+}
+
+.text-mbg-content {
+    background-color: #595252;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 0px 30px 0 30px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-top: -50px;
+}
+
+.text-mbg-content h2{
+    color: white;
+    font-size: 1.1rem;
+    font-weight: normal;
+    width: 360px;
+}
+
+.female-memoji-decoration-content{
+    position: absolute;
+    display: none;
+}
+
+.connect-with-us-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 100vw;
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin-top: 60px;
+}
+
+    .connect-with-us-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 10px 0 40px 0;
+        background-color: #BBC73B;
+        width: 100vw;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        border: 2px solid black;
+    }
+
+    .connect-with-us-container h3 {
+        margin-bottom: 30px;
+    }
+
+@media (max-width: 1024px){
+    .hellper-container h1 {
+        width: 300px;
+        text-align: center;
+    }
+
+    .hellper-content {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .hellper-content h1{
+        text-align: center;
+    }
+
+    .static-loading-img{
+        width: 200px;
+        left: auto;
+        top: -120px;
+    }
+
+    .male-helper-img {
+        width: 200px;
+        top: -110px;
+        right: auto;
+        left: 40px;
+    }
+
+    .hellper-btn-container{
+        margin-top: -50px;
+    }
+
+    .mbg-content {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .text-mbg-content {
+        margin-top: 0px;
+    }
+
+    .curve-black-arrow-img {
+        position: absolute;
+        width: 200px;
+        bottom: 140px;
+        left: -100px;
+        transform: rotate(-120deg) scaleY(-1);
+    }
+}
+
+@media (max-width: 768px) {
+    .classes-container {
+        margin-bottom: 400px;
+    }
+}
+
+@media (max-width: 425px) {
+    .classes-container {
+        margin-bottom: 500px;
+    }
+
+    .curve-black-arrow-img {
+        display: none;
+    }
+}*/

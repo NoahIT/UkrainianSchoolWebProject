@@ -1,0 +1,281 @@
+﻿.offer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+    .offer-content h1 {
+        margin: 50px 0 50px 0;
+        font-weight: 900;
+    }
+
+.plan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.plans-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 80px;
+    margin: 0 auto;
+}
+
+.plans-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.plan {
+    position: relative;
+    flex: 1 0 250px;
+    border: 2px solid black;
+    border-radius: 0px 20px 20px 20px;
+    padding: 20px 0px 0 0px;
+    margin-bottom: 20px;
+    background-color: #229ED9;
+    min-height: 350px;
+    width: 250px;
+    box-shadow: black 4px 4px 0px 0px;
+}
+
+    .plan:hover {
+        transition: 0.2s ease-in-out;
+        box-shadow: none;
+    }
+
+.plan-content {
+    overflow: hidden; /* Apply overflow: hidden here */
+}
+
+.discount-tag {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -30px;
+    right: -30px;
+    background-color: #443B3B;
+    color: white;
+    height: 80px;
+    width: 80px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.4rem;
+    z-index: 15;
+}
+
+.details h2, .details p, .details button {
+    text-align: center;
+}
+
+.details h2 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 10px;
+    width: 250px;
+}
+
+.details p {
+    font-size: 1.2rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    background-color: #443B3B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #555;
+        transition: 0.2s ease-in-out;
+        box-shadow: black 4px 4px 0px 0px;
+    }
+
+.original-price {
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+.discounted-price, .price {
+    font-weight: 700;
+}
+
+.footnote {
+    font-size: 0.8em;
+    color: white;
+    width: 100%; /* Adjusted to fit within the new width */
+    line-height: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 1199px) {
+    .plans-group {
+        justify-content: center;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.offer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+    .offer-content h1 {
+        margin: 50px 0 50px 0;
+        font-weight: 900;
+    }
+
+.plan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.plans-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    gap: 20px;
+    margin: 0 auto;
+}
+
+    .plans-group {
+        display: flex;
+        flex-direction: row;
+    }
+
+.plan {
+    flex: 1 0 300px;
+    border: 2px solid black;
+    border-radius: 0px 20px 20px 20px;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #229ED9;
+    overflow: hidden;
+    min-height: 350px;
+    width: 300px;
+    box-shadow: black 4px 4px 0px 0px;
+}
+
+    .plan:hover {
+        transition: 0.2s ease-in-out;
+        box-shadow: none;
+    }
+
+.discount-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: slategrey;
+    color: white;
+    height: 70px;
+    width: 70px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.details h2, .details p, .details button {
+    text-align: center;
+}
+
+.details h2 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 10px;
+    width: 300px;
+}
+
+.details p {
+    font-size: 1.2rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    background-color: slategrey;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #555;
+        transition: 0.2s ease-in-out;
+        box-shadow: black 4px 4px 0px 0px;
+    }
+
+.original-price {
+    text-decoration: line-through;
+    font-weight: normal;
+}
+
+.discounted-price, .price {
+    font-weight: 700;
+}
+
+.footnote {
+    font-size: 0.8em;
+    color: white;
+    width: 100%;*/ /* Adjusted to fit within the new width */
+    /*line-height: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 1199px){
+    .plans-group{
+        justify-content: center;
+    }
+}*/

@@ -1,0 +1,65 @@
+﻿.navbar, .footer {
+    display: none;
+}
+
+.payment-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.spinner-border {
+    width: 100px;
+    height: 100px;
+}
+
+@media(max-width: 1024px) {
+    .spinner-border {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media(max-width: 330px) {
+    .spinner-border {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.navbar, .footer {
+    display: none;
+}
+
+.payment-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.spinner-border {
+    width: 100px;
+    height: 100px;
+}
+
+@media(max-width: 1024px) {
+    .spinner-border {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media(max-width: 330px) {
+    .spinner-border {
+        width: 50px;
+        height: 50px;
+    }
+}*/

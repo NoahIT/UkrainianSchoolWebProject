@@ -1,0 +1,18 @@
+﻿.coupon-memoji {
+    position: absolute;
+    top: -150px;
+    right: 0px;
+    left: 550px;
+    width: 300px;
+    z-index: 9;
+}
+
+.discount-info-label {
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+}
+
+.form-group-buttons {
+    gap: 10px;
+}

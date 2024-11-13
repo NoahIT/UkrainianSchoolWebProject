@@ -1,0 +1,77 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Оберіть свій формат навчання";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareLearningFormat.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css">
+
+<div class=" top-left"></div>
+<div class=" top-right"></div>
+<div class=" bottom-right"></div>
+
+<div class="girl-container">
+    <img src="~/Images/QuestionareImages/5_LearningFormat/GirlMemoji.png"/>
+</div>
+<div class="pencil-container">
+    <img src="~/Images/QuestionareImages/5_LearningFormat/Pencil.png" />
+</div>
+<div class="ruler-container">
+    <img src="~/Images/QuestionareImages/5_LearningFormat/Ruler.png" />
+</div>
+
+<div class="container">
+    <h1>ОБЕРИ ФОРМАТ НАВЧАННЯ</h1>
+    
+    <form class="content" action="/selectClass" method="post" onsubmit="return updateLearningFormat()">
+            <div class="checkbox-container">
+                <input type="checkbox" id="option1">
+            <label for="option1">За складеною нами програмою</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option2">
+            <label for="option2">За предметами в школі</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option3">
+            <label for="option3">Обидва варіанти підходять</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="option4">
+            <label for="option4">Ще не знаю</label>
+            </div>
+        <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+        <input type="hidden" name="Motivation" value="@Model.Motivation" />
+        
+        <input type="hidden" name="LearningFormat" id="LearningFormat" value="" />
+
+        <button class="go-forward" type="submit">Ідіть уперед</button>
+    </form>
+</div>
+
+<script>
+    function updateLearningFormat() {
+        const checkboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+        const selectedValues = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => {
+                const label = document.querySelector(`label[for="${checkbox.id}"]`);
+                return label ? label.textContent : '';
+            });
+
+        if (selectedValues.length === 0) {
+            alert("Пожалуйста, выберите хотя бы один вариант.");
+            return false; // Prevent form submission
+        }
+
+        document.getElementById('LearningFormat').value = selectedValues.join(', ');
+        return true; // Allow form submission
+    }
+</script>

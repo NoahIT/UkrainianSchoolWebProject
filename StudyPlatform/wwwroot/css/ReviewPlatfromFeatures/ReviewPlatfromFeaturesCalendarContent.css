@@ -1,0 +1,235 @@
+﻿.calendar-content {
+    margin-top: 50px;
+}
+
+table {
+    width: 900px;
+}
+
+th, td {
+    border: 1px solid rgb(68, 59, 59, 0.7);
+    padding: 8px;
+    text-align: center;
+    height: 80px;
+    max-width: 60px;
+    padding: 10px;
+}
+
+.calendar-content h1 {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.calendar-content h1 {
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.null-time-column {
+    border-top: none;
+    border-left: none;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+.time-column {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.math, .history, .language {
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgb(68, 59, 59, 0.4) 3.5px 3.5px 0px 0px;
+    margin-top: 10px;
+}
+
+.math {
+    background-color: rgb(187, 199, 59, 0.5);
+}
+
+.history {
+    background-color: rgb(34, 158, 217, 0.4);
+}
+
+.language {
+    background-color: rgb(68, 59, 59, 0.3);
+}
+
+    .math:hover, .history:hover, .language:hover {
+        background-color: white;
+        box-shadow: none;
+        border: 1.5px solid rgb(68, 59, 59, 0.3);
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+@media(max-width: 1024px) {
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+        overflow: hidden;
+    }
+
+    table, th, td {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+    /*   
+    td {
+        border-right: none;
+        border-left: none;
+    }*/
+
+    .time-column {
+        font-size: 1rem;
+        border: 1px solid;
+    }
+
+    td:last-child {
+        border-right: 1px solid;
+    }
+
+    th {
+        font-size: 1.25rem;
+    }
+
+    .math, .history, .language {
+        width: 100%;
+        word-wrap: break-word;
+        height: auto;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    /*    tr:has(> .math) td:not(:first-child):not(:has(> div)),
+    tr:has(> .history) td:not(:first-child):not(:has(> div)),
+    tr:has(> .language) td:not(:first-child):not(:has(> div)) {
+        display: none;
+    }*/
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.calendar-content{
+    margin-top: 50px;
+}
+
+table {
+    width: 900px;
+}
+
+th, td {
+    border: 1px solid rgb(68, 59, 59, 0.7);
+    padding: 8px;
+    text-align: center;
+    height: 80px;
+    max-width: 60px;
+    padding: 10px;
+}
+
+.calendar-content h1 {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.calendar-content h1 {
+    margin: 50px 0 50px 0;
+    font-weight: 900;
+}
+
+.null-time-column{
+    border-top: none;
+    border-left: none;
+}
+
+th {
+    font-size: 1.5rem;
+}
+
+.time-column{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.math, .history, .language {
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgb(68, 59, 59, 0.4) 3.5px 3.5px 0px 0px;
+    margin-top: 10px;
+}
+
+.math {
+    background-color: rgb(187, 199, 59, 0.5);
+}
+
+.history {
+    background-color: rgb(34, 158, 217, 0.4);
+}
+
+.language {
+    background-color: rgb(68, 59, 59, 0.3);
+}
+
+    .math:hover, .history:hover, .language:hover {
+        background-color: white;
+        box-shadow: none;
+        border: 1.5px solid rgb(68, 59, 59, 0.3);
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+@media(max-width: 1024px) {
+
+    table {
+        width: 100%;
+        table-layout:fixed;
+        overflow: hidden;
+    }
+
+    table, th, td {
+        font-size: 0.75rem;
+        padding: 5px;
+    }*/
+ /*   
+    td {
+        border-right: none;
+        border-left: none;
+    }*/
+    
+    /*.time-column {
+        font-size: 1rem;
+        border: 1px solid;
+    }
+
+        td:last-child {
+            border-right: 1px solid;
+        }
+
+        th {
+            font-size: 1.25rem;
+        }
+
+    .math, .history, .language {
+        width: 100%;
+        word-wrap: break-word;
+        height: auto;
+        text-align: center;
+        font-size: 0.75rem;
+    }*/
+
+/*    tr:has(> .math) td:not(:first-child):not(:has(> div)),
+    tr:has(> .history) td:not(:first-child):not(:has(> div)),
+    tr:has(> .language) td:not(:first-child):not(:has(> div)) {
+        display: none;
+    }*/
+/*}*/

@@ -1,0 +1,162 @@
+﻿.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-image: url(/Images/HomePage/5_Container/ContainerBackground/RectangleBackground.svg);
+    background-size: 500px;
+    width: 100vw;
+    box-shadow: 0px 0px 300px 50px white inset, inset 0 0 200px 0 white;*/
+}
+
+.text-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.text-display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #229ED9;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 0px 20px;
+    min-width: 400px;
+    text-align: left;
+    box-shadow: black 4px 4px 0px 0px;
+}
+
+.text-display-container:hover {
+    box-shadow: none;
+    transition: 0.5s ease-in-out;
+}
+
+.text-display-container h1 {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.trophy-img-container {
+    position: absolute;
+    top: -105px;
+    left: 10px;
+}
+
+.trophy-img-container img {
+    width: 80px;
+}
+
+.girl-memoji-img-container {
+    position: absolute;
+    right: -90px;
+    bottom: -110px;
+}
+
+.girl-memoji-img-container img {
+    width: 200px;
+}
+
+.hand-memoji-img-container {
+    position: absolute;
+    left: -250px;
+    transform: rotate(10deg);
+    display: none;
+}
+
+@media(max-width: 1024px) {
+    .text-display-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .text-display-container {
+        min-width: 300px;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    /*background-image: url(/Images/HomePage/5_Container/ContainerBackground/RectangleBackground.svg);
+    background-size: 500px;
+    width: 100vw;
+    box-shadow: 0px 0px 300px 50px white inset, inset 0 0 200px 0 white;*/
+/*}
+
+.text-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.text-display-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #229ED9;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 0px 20px;
+    min-width: 400px;
+    text-align: left;
+    box-shadow: black 4px 4px 0px 0px;
+}
+
+    .text-display-container:hover {
+        box-shadow: none;
+        transition: 0.5s ease-in-out;
+    }
+
+    .text-display-container h1 {
+        color: white;
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+
+.trophy-img-container {
+    position: absolute;
+    top: -105px;
+    left: 10px;
+}
+
+.trophy-img-container img{
+    width: 80px;
+}
+
+.girl-memoji-img-container{
+    position: absolute;
+    right: -90px;
+    bottom: -110px;
+}
+
+.girl-memoji-img-container img {
+    width: 200px;
+}
+
+.hand-memoji-img-container {
+    position: absolute;
+    left: -250px;
+    transform: rotate(10deg);
+    display: none;
+}
+
+@media(max-width: 1024px) {
+    .text-display-container h1{
+        font-size: 1.2rem;
+    }
+    .text-display-container{
+        min-width: 300px;
+    }
+}*/

@@ -1,0 +1,55 @@
+﻿@model StudyPlatform.ViewModels.LoginViewModel?
+@{
+    ViewData["Title"] = "Вхід";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/Login/login.css" />
+<link rel="stylesheet" href="~/css/siteMinmal.css" />
+
+<div class="login-main-container">
+    <div class="top-bar">
+        <div class="line"></div>
+        <a class="close-btn" asp-area="" asp-controller="Home" asp-action="Index">X</a>
+    </div>
+
+    <div class="login-container">
+
+        <h2>Увійдіть в акаунт</h2>
+
+        <form action="/login-account" method="post" class="login-form">
+            @Html.AntiForgeryToken()
+            <div class="login-box">
+                <div class="form-group">
+                    <label for="email" class="control-label">Пошта</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="вкажіть пошту" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="control-label">Пароль</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="вкажіть пароль" required>
+                    <div class="error">@Html.ValidationMessageFor(m => m.Password)</div>
+                </div>
+
+                <div class="form-group-forgot-password">
+                    <a class="forgot-password" asp-area="" asp-controller="Login" asp-action="EmailToPasswordRecovery">Забули пароль?</a>
+                    @* <a type="button" class="btn btn-secondary" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">назад</a> *@
+                </div>
+                <div class="no-account-registration-link">
+                    <a type="button" class="no-acc-reg" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Немає акаунта? пройдіть реєстрацію</a>
+                </div>
+                
+            </div>
+
+            <div class="form-group-buttons">
+                <button type="submit" class="btn btn-primary">Підключитися</button>
+                <a type="button" class="btn btn-secondary" href="/Home">Повернутися назад</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="line line-bottom"></div>
+    </div>
+</div>
+

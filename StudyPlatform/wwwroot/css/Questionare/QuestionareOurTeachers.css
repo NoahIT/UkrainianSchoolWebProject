@@ -1,0 +1,209 @@
+﻿body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: grey;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memoji-hand {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+}
+
+.memoji-hand img {
+    width: 400px;
+    height: auto;
+    z-index: -1;
+    transform: rotate(-120deg);
+}
+
+.container h1 {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-weight: 900;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 20px;
+    gap: 40px;
+}
+
+.iphone-container img {
+    width: 250px;
+    height: auto;
+}
+
+.go-forward {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+    background-color: #BBC73B;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.go-forward:hover {
+    color: white;
+    background-color: #229ED9;
+    transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    .memoji-hand img {
+        width: 290px;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .memoji-hand img {
+        display: none;
+    }
+
+    .iphone-container img{
+        width: 100px;
+        height: auto;
+    }
+
+    .container h1 {
+        margin: 50px 0 0 0;
+    }
+
+    .content {
+        margin-top: 50px;
+        
+        gap: 0;
+    }
+
+    .iphone-container {
+        margin-top: -70px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container h1 {
+        font-size: 1.2rem;
+    }
+
+    .go-forward {
+        font-size: 1rem;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: grey;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memoji-hand {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+}
+
+    .memoji-hand img {
+        width: 400px;
+        height: auto;
+        z-index: -1;
+        transform: rotate(-120deg);
+    }
+
+.container h1 {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-weight: 900;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+    padding: 20px;
+    gap: 40px;
+}
+
+.iphone-container img {
+    width: 250px;
+    height: auto;
+}
+
+.go-forward {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+    background-color: #BBC73B;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .go-forward:hover {
+        color: white;
+        background-color: #229ED9;
+        transition: 0.2s ease-in-out;
+    }
+
+    @media (max-width: 1024px) {
+        .memoji-hand img {
+            width: 290px;
+        }
+    }
+
+    @media (max-width: 820px){
+
+        .memoji-hand img {
+            display: none;
+        }
+
+        .container h1{
+            margin: 50px 0 0 0;
+        }
+
+        .content{
+            margin-top: 0px;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .iphone-container{
+            margin-top: -70px;
+        }
+    }*/

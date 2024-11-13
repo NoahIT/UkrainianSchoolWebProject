@@ -1,0 +1,84 @@
+﻿@model StudyPlatform.ViewModels.PaymentViewModel
+
+
+@{
+    ViewData["Title"] = "Платежі...";
+    Layout = "";
+}
+
+<script id="widget-wfp-script" language="javascript" type="text/javascript" src="https://secure.wayforpay.com/server/pay-widget.js"></script>
+
+<script type="text/javascript">
+    function createAndSubmitForm(actionUrl) {
+        var form = document.createElement("form");
+        form.method = "POST";
+        form.action = actionUrl;
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    var pay = function () {
+        var wayforpay = new Wayforpay();
+        var regularOn = "@(Model.NextPay != null ? "1" : "0")";
+        var regularMode = "@(Model.NextPay != null ? "monthly" : "")";
+        var dateNext = "@(@Model.NextPay ?? "")";
+        var dateEnd = "@(Model.NextPay != null ? @Model.End : "")";
+        var regularBehavior = "@(Model.NextPay != null ? "preset" : "")";
+
+        var options = {
+            merchantAccount: "uniqum_school",
+            merchantDomainName: "www.uniqum.school",
+            authorizationType: "SimpleSignature",
+            merchantSignature: "@Model.Signature",
+            orderReference: "@Model.OrderId",
+            orderDate: "@Model.OrderDate",
+            amount: "@Model.Price",
+            currency: "UAH",
+            productName: ["@Model.Productname"],
+            productPrice: ["@Model.Price"],
+            productCount: ["1"],
+            clientFirstName: "@Model.Order.User.FirstName",
+            clientLastName: "@Model.Order.User.LastName",
+            clientEmail: "@Model.Order.User.AppUser.Email",
+            clientPhone: "380631234567",
+            clientAddress: "Kiev",
+            clientCity: "default",
+            paymentSystems: "card;googlePay;applePay",
+            orderTimeout: "900",
+            language: "UA",
+            serviceUrl: "https://uniqum.school/payments/responseFromApi"
+        };
+
+        if (regularOn) {
+            options.regularOn = regularOn;
+            options.regularMode = regularMode;
+            options.dateNext = dateNext;
+            options.dateEnd = dateEnd;
+            options.regularBehavior = regularBehavior;
+        }
+
+        console.log(options);
+
+        wayforpay.run(options,
+            function (response) {
+                console.log('Payment approved:', response);
+                createAndSubmitForm('@Url.Action("Success", "Payments")');
+            },
+            function (response) {
+                console.log('Payment declined:', response);
+                createAndSubmitForm('@Url.Action("Failed", "Payments")');
+            },
+            function (response) {
+                console.log('Payment pending:', response);
+                createAndSubmitForm('@Url.Action("Pending", "Payments")');
+            }
+        );
+    }
+
+    window.onload = function () {
+        pay();
+    }
+</script>
+        
+<button type="button" onclick="pay();">Оплатити</button>

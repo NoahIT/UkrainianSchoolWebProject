@@ -1,0 +1,60 @@
+﻿@model StudyPlatform.ViewModels.StreamViewModel
+@{
+    ViewBag.Title = "Пряма трансляція";
+     Layout = "~/Views/Shared/_LiveStreamLayout.cshtml";
+}
+
+<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs/http-streaming"></script>
+
+<link rel="stylesheet" href="~/css/LiveStream/LiveStream.css" />
+
+<div class="live-stream-container">
+    
+    @if (Model.Stream.IsLive)
+    {
+        @await Component.InvokeAsync("Chat", Model)
+
+        <div class="live-video-container">
+            <video id="my-video"
+                   class="video-js vjs-default-skin"
+                   controls
+                   preload="auto"
+                   autoplay
+                   data-setup='{}'>
+                <source src="@Model.Stream.StreamPath" type="application/x-mpegURL">
+            </video>
+            <div class="message-btn">
+                <a type="Button" class="exit-stream-btn" href="/">
+                    Вийти
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="live-video-container-offline">
+            <h2>Онлайн урок наразі недоступний</h2>
+            <p>Спробуйте перезавантажити сторінку пізніше.</p>
+            <div class="message-btn">
+                <a type="Button" class="message-btn" href="javascript:location.reload();">
+                    Перезавантажити сторінку
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    var player = videojs('my-video');
+
+    player.ready(function () {
+        player.src({
+            src: "@Model.Stream.StreamPath",
+            type: "application/x-mpegURL",
+            withCredentials: true
+        });
+    });
+</script>
+

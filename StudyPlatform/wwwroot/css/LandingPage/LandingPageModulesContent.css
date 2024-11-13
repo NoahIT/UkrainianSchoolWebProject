@@ -1,0 +1,275 @@
+﻿.module-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 90vw;
+    /*    height: 500px;*/
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin-top: 60px;
+}
+
+.module-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.module-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 100px 0 40px 0;
+}
+
+.module-content h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+
+
+.math-container, .history-container, .ukranian-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border-radius: 0px 30px 30px 30px;
+    color: white;
+    height: 300px;
+    width: 230px;
+    overflow: hidden;
+}
+
+.math-container {
+    background-color: #229ED9;
+    box-shadow: #229ED9 0px 0px 30px;
+}
+
+.history-container {
+    background-color: #404040;
+    box-shadow: grey 0px 0px 30px;
+}
+
+.ukranian-container {
+    background-color: #BBC73B;
+    box-shadow: #BBC73B 0px 0px 30px;
+}
+
+.icon-container-math img,
+.icon-container-history img,
+.icon-container-ukranian img {
+    position: relative;
+    z-index: 2;
+    width: 55px;
+}
+
+.icon-container-history,
+.icon-container-ukranian,
+.icon-container-math {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+
+.module-container h3 {
+    margin: 70px 0 30px 0;
+}
+
+.blue-module-circle,
+.grey-module-circle,
+.green-module-circle {
+    position: absolute;
+    top: -18px;
+    left: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.blue-module-circle {
+    background-color: #a7daf1;
+}
+
+.grey-module-circle {
+    background-color: #737373;
+}
+
+.green-module-circle {
+    background-color: #e4e9af;
+}
+
+.module-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+    .module-button:hover {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        box-shadow: white 2px 2px 1px 0px;
+        padding: 10px;
+    }
+
+    .module-button img {
+        width: 45px;
+    }
+
+@media (max-width: 1024px) {
+    .module-content {
+        flex-direction: column;
+    }
+
+    .module-container h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.module-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 90vw;*/
+/*    height: 500px;*/
+    /*box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin-top: 60px;
+}
+
+.module-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.module-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 100px 0 40px 0;
+}
+
+.module-content h1{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+
+
+.math-container, .history-container, .ukranian-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border-radius: 0px 30px 30px 30px;
+    color: white;
+    height: 300px;
+    width: 230px;
+    overflow: hidden;
+}
+
+.math-container {
+    background-color: #229ED9;
+    box-shadow: #229ED9 0px 0px 30px;
+}
+
+.history-container {
+    background-color: #404040;
+    box-shadow: grey 0px 0px 30px;
+}
+
+.ukranian-container {
+    background-color: #BBC73B;
+    box-shadow: #BBC73B 0px 0px 30px;
+}
+
+    .icon-container-math img,
+    .icon-container-history img,
+    .icon-container-ukranian img {
+        position: relative;
+        z-index: 2;
+        width: 55px;
+    }
+
+.icon-container-history,
+.icon-container-ukranian,
+.icon-container-math {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+
+.module-container h3{
+    margin: 70px 0 30px 0;
+}
+
+.blue-module-circle,
+.grey-module-circle,
+.green-module-circle {
+    position: absolute;
+    top: -18px;
+    left: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.blue-module-circle {
+    background-color: #a7daf1;
+}
+.grey-module-circle {
+    background-color: #737373;
+}
+
+.green-module-circle {
+    background-color: #e4e9af;
+}
+
+.module-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+    .module-button:hover {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        box-shadow: white 2px 2px 1px 0px;
+        padding: 10px;
+    }
+
+.module-button img{
+    width: 45px;
+}
+
+@media (max-width: 1024px){
+    .module-content {
+        flex-direction: column;
+    }
+    .module-container h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+}*/

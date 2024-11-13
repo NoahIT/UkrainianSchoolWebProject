@@ -1,0 +1,68 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Виберіть години навчання";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareHoursPerWeek.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+
+<div class=" top-right"></div>
+<div class=" bottom-right"></div>
+<div class=" top-left"></div>
+
+<div class="container">
+    <h1>ОБЕРИ КІЛЬКІСТЬ ГОДИН НА ТИЖДЕНЬ</h1>
+    
+    <form class="content" action="/enterGmailCredentials" method="post" onsubmit="return updateHoursPerWeek()">
+        <div class="checkbox-container">
+            <input type="radio" id="option1" name="hours">
+            <label for="option1">1 Година на тиждень</label>
+        </div>
+        <div class="checkbox-container">
+            <input type="radio" id="option2" name="hours">
+            <label for="option2">2 Година на тиждень</label>
+        </div>
+        <div class="checkbox-container">
+            <input type="radio" id="option3" name="hours">
+            <label for="option3">3 Година на тиждень</label>
+        </div>
+
+        <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+        <input type="hidden" name="Motivation" value="@Model.Motivation"/>
+        <input type="hidden" name="LearningFormat" value="@Model.LearningFormat"/>
+        <input type="hidden" name="LearningTarget" id="LearningTarget" value="@Model.LearningTarget"/>
+        <input type="hidden" id="StudyModules" name="StudyModules" value="@Model.StudyModules"/>
+        <input type="hidden" name="Class" id="Class" value="@Model.Class" />
+
+        <input type="hidden" id="HoursPerWeek" name="HoursPerWeek" value=""/>
+
+        <button class="go-forward" type="submit">Ідіть уперед</button>
+    </form>
+    
+    <script>
+        function updateHoursPerWeek() {
+            var checkboxes = document.querySelectorAll('.checkbox-container input[type="radio"]');
+            var selectedValues = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => {
+                    var label = document.querySelector(`label[for="${checkbox.id}"]`);
+                    return label ? label.textContent : '';
+                });
+
+            if (selectedValues.length === 0) {
+                alert("Пожалуйста, выберите хотя бы один вариант.");
+                return false;
+            }
+
+            document.getElementById('HoursPerWeek').value = selectedValues.join(', ');
+            return true; 
+        }
+    </script>
+</div>

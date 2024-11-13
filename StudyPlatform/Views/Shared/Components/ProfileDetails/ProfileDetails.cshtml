@@ -1,0 +1,70 @@
+﻿@model StudyPlatform.ViewModels.ProfileViewModel
+
+<input type="hidden" name="userId" value="@Model.UserId"/>
+<input type="hidden" name="email" value="@Model.Email"/>
+
+<div class="flex-container">
+    <div class="flex-item name">
+        <label for="fullName" class="form-label">Ім'я та Прізвище</label>
+        <input type="text" class="form-control" id="fullName" placeholder="Ім'я та Прізвище" value="@Model?.FullName" name="fullName">
+    </div>
+    <div class="flex-item contact-label align-input">
+        <label class="form-label">Контактна інформація</label>
+    </div>
+</div>
+<div class="flex-container">
+    <div class="flex-item username">
+        <label for="username" class="form-label">Твій нік</label>
+        <input type="text" class="form-control" id="username" placeholder="Нік" value="@Model?.Login" name="login">
+    </div>
+    <div class="flex-item email">
+        <label for="email" class="form-label">Твоя пошта</label>
+        <input type="email" class="form-control" id="email" placeholder="Пошта" value="@Model?.Email" disabled>
+    </div>
+</div>
+<div class="flex-container">
+    <div class="flex-item password">
+        <label for="password" class="form-label">Пароль</label>
+        <input type="password" class="form-control" id="password" placeholder="Пароль" name="password">
+    </div>
+    <div class="flex-item phone">
+        <label for="phone" class="form-label">Твій телефон</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Телефон" value="@Model?.Phone" name="phone">
+    </div>
+</div>
+<div class="flex-container">
+    <div class="flex-item class">
+        <label class="form-label">Клас</label>
+        @* ЛОГИКА ПО ОПРЕДЕЛЕНИЮ, ХЗ ПРОСТО ИЛИ НУЖНО *@
+        <div class="form-check-container">
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="class" id="class10" value="10" @(Model?.ClassNumber != null && Model.ClassNumber.Contains("10") ? "checked" : "") disabled>
+                <label class="form-check-label" for="class10">10</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="class" id="class11" value="11" @((Model?.ClassNumber != null && Model.ClassNumber.Contains("11") ? "checked" : "")) disabled>
+                <label class="form-check-label" for="class11">11</label>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item checkbox">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="importantInfo" required>
+            <label class="form-check-label" for="importantInfo" id="importantInfoText"
+                   style="font-size: 12px;">
+                за цими контактами будемо надсилати
+                <br /> важливу інформацію, тож переконайся,
+                <br /> що контакти введені вірно
+            </label>
+        </div>
+    </div>
+</div>
+<div class="flex-container full-width">
+    <div class="flex-item">
+        <button type="submit" class="btn btn-primary w-100"
+                style="background-color: #BBC73B; color: black; border:none;">
+            ЗБЕРЕГТИ
+        </button>
+    </div>
+</div>

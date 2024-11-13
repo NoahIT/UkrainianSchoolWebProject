@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Uniqum school</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StudyPlatform.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/NavBar/navBar.css" />
+    <link rel="stylesheet" href="~/css/Footer/footer.css" />
+</head>
+<style>
+    .navbar-toggler {
+        width: auto !important;
+    }
+
+    .nav-item {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        max-width: 200px;
+    }
+</style>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-toggleable-lg box-shadow mb-3 custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/Images/Logo/icons8-3d-cube-64.png" />
+                Uniqum School
+            </a>
+            @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Yчебная платформа</a> *@
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+
+                    <li class="nav-item ">
+                        <a class="btn btn-secondary nav-link green-button" id="staticBtnNav" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan"
+                               style="background-color: white; min-width: 270px; width: fit-content;">Отримати участь</a>
+                    </li>
+
+                    <div class="nav-item-icons">
+                        <li class="nav-item">
+                            <a href="https://www.instagram.com/">
+                                <img src="~/Images/Icons/InstagramIcon.svg"/>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://telegram.org/">
+                                <img src="~/Images/Icons/TelegramIcon.svg"/>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col" id="footerContactInformation">
+                    <ul>
+                        <li class="bold-text">Контакти</li>
+                        <li><p >Пошта: Yчебная платформа@gmail.com</p></li>
+                        <li><p >Телефон: +370 000 00000</p></li>
+                        <li><p >Адреса: Yчебная платформа g. 201C</p></li>
+                    </ul>
+                </div>
+                <div class="footer-col" id="footerSocialLinks">
+                    <ul>
+                        <ul class="footer-wrap">
+                            <li id="policy-header">Політика</li>
+                            <li id="policy-header">конфіденційність</li>
+                        </ul>
+
+                        <div class="footer-icons">
+                            <li>
+                                <a href="https://www.instagram.com/">
+                                    <img src="~/Images/Icons/InstagramIcon.svg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://telegram.org/">
+                                    <img src="~/Images/Icons/TelegramIcon.svg" />
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

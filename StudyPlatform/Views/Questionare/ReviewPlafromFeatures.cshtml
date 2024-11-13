@@ -1,0 +1,268 @@
+﻿@{
+    ViewData["Title"] = "Що ми пропонуємо";
+    Layout = "~/Views/Shared/_StaticNavBarLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-x: hidden !important;
+        margin-bottom: -60px;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesLandingContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesModuleContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesCalendarContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesTextContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesWhatYouGetContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesVideoContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesOverviewContent.css" />
+
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageQuestionAnswer.css" />
+
+<div class="container" style="margin-top: 95px;">
+    @* Landing content *@
+    <div class="landing-content">
+        <div class="white-bg">
+            <h1>ВЧИСЯ З <br /> ПОСМІШКОЮ</h1>
+        </div>
+        <div class="grey-bg">
+            <h2>Покращимо твої знання <br />з індивідуальним <br />   підходом</h2>
+        </div>
+
+        <div class="landing-photo">
+            <img src="~/Images/ReviewPlatformFeatures/LandingPhoto.png"/>
+        </div>
+        <div class="smaller-landing-photo">
+            <img src="~/Images/ReviewPlatformFeatures/LowerWidthLandingImg.png"/>
+        </div>
+        <div class="smaller-landing-photo-yay">
+            <img src="~/Images/ReviewPlatformFeatures/YAY.png" />
+        </div>
+    </div>
+
+    @* Modules *@
+    <div class="module-content ">
+        <h1>ПРОГРАМИ</h1>
+
+        <div class="module-selection">
+            <div class="module-content-container">
+
+                <div class="container-decoration">
+                    <div class="border-right"></div>
+                    <div class="border-right"></div>
+                </div>
+
+                <div class="module-content-heder">
+                    <h1>Математика</h1>
+                </div>
+                <div class="module-content-information">
+                    <h2>ОПИС ПРЕДМЕТА</h2>
+                    <div class="module-group">
+                        <div class="information-circle-grey"></div>
+                        <h3>ПІБ ВЧИТЕЛЯ</h3>
+                    </div>
+                    <div class="module-group">
+                        <div class="information-circle-black"></div>
+                        <h3>кількість предметів</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-content-container">
+
+                <div class="container-decoration">
+                    <div class="border-right"></div>
+                    <div class="border-right"></div>
+                </div>
+
+                <div class="module-content-heder">
+                    <h1>История</h1>
+                </div>
+                <<div class="module-content-information">
+                    <h2>ОПИС ПРЕДМЕТА</h2>
+                    <div class="module-group">
+                        <div class="information-circle-grey"></div>
+                        <h3>ПІБ ВЧИТЕЛЯ</h3>
+                    </div>
+                    <div class="module-group">
+                        <div class="information-circle-black"></div>
+                        <h3>кількість предметів</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-content-container">
+
+                <div class="container-decoration">
+                    <div class="border-right"></div>
+                    <div class="border-right"></div>
+                </div>
+
+                <div class="module-content-heder">
+                    <h1>Украинский</h1>
+                </div>
+                <div class="module-content-information">
+                    <h2>ОПИС ПРЕДМЕТА</h2>
+                    <div class="module-group">
+                        <div class="information-circle-grey"></div>
+                        <h3>ПІБ ВЧИТЕЛЯ</h3>
+                    </div>
+                    <div class="module-group">
+                        <div class="information-circle-black"></div>
+                        <h3>кількість предметів</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    @* Calendar *@    
+    @* @await Component.InvokeAsync("Schedule") *@
+    
+    @* Text *@
+    <div class="text-container">
+        <div class="text-content">
+            <div class="trophy-img-container">
+                <img src="~/Images/ReviewPlatformFeatures/trophy.png" />
+            </div>
+
+            <div class="text-display-container">
+                <h1>ми встановили твою <br />особистість - майбутній <br />відмінник </h1>
+            </div>
+
+            <div class="girl-memoji-img-container">
+                <img src="~/Images/ReviewPlatformFeatures/GirlMemoji.png" />
+            </div>
+            <div class="hand-memoji-img-container">
+                <img src="~/Images/ReviewPlatformFeatures/hand-memoji.png" />
+            </div>
+        </div>
+
+        @* What students get *@
+        <div class="what-you-get-container">
+            <h1>ПЕРЕВАГИ</h1>
+            <h2>Ставши нашим учнем ти отримаєш:</h2>
+            <div class="what-you-get-content">
+                <div class="col">
+                    <div class="offer-item">
+                        <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 1 row 1.png" />
+                        <h3>Індивідуальний план навчання</h3>
+                    </div>
+                    <div class="offer-item">
+                        <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 1 row 2.png" />
+                        <h3>Допомога з домашньою роботою</h3>
+                    </div>
+                    <div class="offer-item">
+                        <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 1 row 3.png" />
+                        <h3>Безмежний доступ до записів уроків</h3>
+                    </div>
+                </div>
+                <div class="col-divider"></div>
+                <div class="col">
+                    <div class="offer-item">
+                        <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 2 row 1.png" />
+                        <h3>Інтерактивні уроки</h3>
+                    </div>
+                    <div class="offer-item">
+                        <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 2 row 2.png" />
+                        <h3>Подарунки та окуляри</h3>
+                    </div>
+                    <div class="offer-item">
+                        <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 2 row 3.png" />
+                        <h3>Мотивуюча спільнота</h3>
+                    </div>
+                </div>
+            </div>
+
+            <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+            <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan"> Начать</a>
+        </div>
+    </div>
+
+    @* Video *@
+    <div class="video-container">
+        <h1>ХІД РОБОТИ</h1>
+        <h2>Цікаво як ми проводимо уроки?</h2>
+        <div class="video-content">
+            <div class="video-memoji-hand">
+                <img src="~/Images/ReviewPlatformFeatures/memoji-hand-pointing-down.png"/>
+            </div>
+            <div class="video">
+                ВИДОС
+                <div class="video-shadow"></div>
+                <div class="dots">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">Начать</a>
+    </div>
+
+    @* Overview *@
+    <div class="overview-container" style="margin-bottom: 60px;">
+        <h1>ВІДГУКИ</h1>
+        <div class="overview-content">
+            <div class="grey-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (1).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+            <div class="green-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (3).png" />
+                 <div class="overview-description">
+                     <h1>ПІБ</h1>
+                     <h2>Місце відгуку</h2>
+                 </div>
+            </div>
+            <div class="grey-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (2).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">Начать</a>
+    </div>
+
+    @* Question-Answer *@
+    <div class="question-answer-content">
+        <h1>ПИТАННЯ - ВІДПОВІДЬ</h1>
+        <div class="question-answer-content-content">
+            <div class="question-1-content">
+                <div class="question-row">
+                    <h2>Скільки часу триває 1 урок?</h2>
+                    <div class="question-circle">01</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-2-content">
+                <div class="question-row">
+                    <h2>Яка максимальна кількість осіб у групі?</h2>
+                    <div class="question-circle">02</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-3-content">
+                <div class="question-row">
+                    <h2>Які умови повернення грошей?</h2>
+                    <div class="question-circle">03</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-4-content">
+                <div class="question-row">
+                    <h2>Чи можна обрати конкретного вчителя?</h2>
+                    <div class="question-circle">04</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+        </div>
+    </div>
+</div>

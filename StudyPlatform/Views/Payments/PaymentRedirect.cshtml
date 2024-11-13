@@ -1,0 +1,23 @@
+﻿@model int?
+
+@{
+    ViewData["Title"] = "Перенаправлення...";
+    Layout = "";
+}
+
+<link rel="stylesheet" href="~/css/Payments/Redirect.css" />
+
+<div class="payment-container">
+    <h1>Перенаправлення</h1>
+    <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+    </div>
+    <form id="redirectForm" method="post" action="/payment-details">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="orderId" value="@Model" />
+    </form>
+</div>
+
+<script type="text/javascript">
+        document.getElementById("redirectForm").submit();
+    </script>

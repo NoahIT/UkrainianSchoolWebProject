@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "404 Not Found";
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/siteError.css" />
+
+<div class="error-main-container">
+    <div class="top-bar">
+        <div class="line"></div>
+        <label class="error-label">Контакты</label>
+        <div class="error-icons">
+            <li class="error-icon">
+                <a href="https://www.instagram.com/">
+                    <img src="~/Images/Icons/InstagramIcon.svg" />
+                </a>
+            </li>
+            <li class="error-icon">
+                <a href="https://telegram.org/">
+                    <img src="~/Images/Icons/TelegramIcon.svg" />
+                </a>
+            </li>
+        </div>
+    </div>
+
+    <div class="error-container">
+        <h1>ПОМИЛКА!</h1>
+        <h2>404</h2>
+        <p>Пожалуйста, перейдите на главную страницу</p>
+        <a class="btn btn-secondary" href="/Home">Вернуться на главную</a>
+    </div>
+</div>

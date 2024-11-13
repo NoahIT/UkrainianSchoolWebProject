@@ -1,0 +1,51 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Чому ми";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareOurSchoolPerks.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+
+<div class=" bottom-right"></div>
+<div class=" top-left"></div>
+
+<div class="left-fire-memoji">
+    <img src="~/Images/QuestionareImages/9_OurSchoolPerks/Fire.png" />
+</div>
+<div class="right-fire-memoji">
+    <img src="~/Images/QuestionareImages/9_OurSchoolPerks/Fire.png" />
+</div>
+
+<div class="conatainer">
+    <h1>ПЕРЕВАГИ НАШОЇ ОНЛАЙН ШКОЛИ</h1>
+    <form class="content" action="/hoursPerWeek" method="post">
+        <div class="first-strip">
+            <img src="~/Images/QuestionareImages/9_OurSchoolPerks/One.png"/>
+            <h2>Пробний урок безкоштовно</h2>
+        </div>
+        <div class="second-strip">
+            <img src="~/Images/QuestionareImages/9_OurSchoolPerks/Two.png" />
+            <h2>Сучасна програма навчання</h2>
+        </div>
+        <div class="third-strip">
+            <img src="~/Images/QuestionareImages/9_OurSchoolPerks/Three.png" />
+            <h2>Молоді вчителі</h2>
+        </div>
+
+        <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+        <input type="hidden" name="Motivation" value="@Model.Motivation"/>
+        <input type="hidden" name="LearningFormat" value="@Model.LearningFormat"/>
+        <input type="hidden" name="LearningTarget" id="LearningTarget" value="@Model.LearningTarget"/>
+        <input type="hidden" id="StudyModules" name="StudyModules" value="@Model.StudyModules"/>
+        <input type="hidden" name="Class" id="Class" value="@Model.Class" />
+
+        <button class="go-forward" type="submit">Ідіть уперед</button>
+    </form>
+</div>

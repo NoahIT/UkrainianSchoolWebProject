@@ -1,0 +1,130 @@
+﻿@model DAL.Models.Teacher
+@{
+    ViewData["Title"] = "Предмети";
+}
+
+@* <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs/http-streaming"></script>
+ *@
+
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesWhatYouGetContent.css" />
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesOverviewContent.css" />
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageQuestionAnswer.css" />
+<link rel="stylesheet" href="~/css/Classes/Classes.css" />
+<link rel="stylesheet" href="~/css/Classes/SelectedClass.css" />
+
+<div class="selected-class-container">
+    @* Video *@
+    <div class="video-container">
+        <h1>@Model.Subject.Name</h1>
+        <div class="video-content">
+            <div class="video-memoji-hand">
+                <img src="~/Images/ReviewPlatformFeatures/memoji-hand-pointing-down.png" />
+            </div>
+            <div class="video">
+                <iframe id="my-video"
+                        width="560"
+                        height="315"
+                        src="@Model.ExampleVideo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+                <div class="video-shadow"></div>
+                <div class="dots">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="teachers-description">
+            <div class="teacher-landing-photo-container">
+                
+                @* tures buti BUTINAI transperent photo *@
+                @* ir tikriausiai intrinsic size: 1215 x 1333px *@
+                @* render size: 200 x 219px *@
+                <img class="taecher-dynamic-photo" src="~/Images/TeacherPhotos/test-photo.png"/>
+
+                <div class="blue-circle-small"></div>
+                <img class="static-loading-icn" src="~/Images/ClassesPage/StaticLoadingIcon.png"/>
+            </div>
+            <div class="description-of-teacher">
+                <h3>@Model.User.FirstName @Model.User.LastName</h3>
+                <div class="description-content">
+                    @Model.Description
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Overview *@
+    <div class="overview-container" style="margin-bottom: 60px;">
+        <h1>ВІДГУКИ</h1>
+        <div class="overview-content">
+            <div class="grey-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (1).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+            <div class="green-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (3).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+            <div class="grey-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (2).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">Начать</a>
+    </div>
+
+    @* Question-Answer *@
+    <div class="question-answer-content">
+        <h1>ПИТАННЯ - ВІДПОВІДЬ</h1>
+        <div class="question-answer-content-content">
+            <div class="question-1-content">
+                <div class="question-row">
+                    <h2>Скільки часу триває 1 урок?</h2>
+                    <div class="question-circle">01</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-2-content">
+                <div class="question-row">
+                    <h2>Яка максимальна кількість осіб у групі?</h2>
+                    <div class="question-circle">02</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-3-content">
+                <div class="question-row">
+                    <h2>Які умови повернення грошей?</h2>
+                    <div class="question-circle">03</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-4-content">
+                <div class="question-row">
+                    <h2>Чи можна обрати конкретного вчителя?</h2>
+                    <div class="question-circle">04</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var player = videojs('my-video');
+    player.play();
+</script>

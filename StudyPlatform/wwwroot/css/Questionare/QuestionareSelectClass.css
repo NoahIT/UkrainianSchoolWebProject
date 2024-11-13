@@ -1,0 +1,423 @@
+﻿body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #404040;
+}
+
+.questionmark-top-left, .questionmark-top-right,
+.questionmark-bottom-left, .questionmark-bottom-right {
+    position: absolute;
+}
+
+.questionmark-top-left {
+    transform: scaleX(-1) rotate(-60deg);
+    left: 290px;
+    top: 100px;
+    width: 300px;
+    height: auto;
+}
+
+    .questionmark-top-left img {
+        width: 200px;
+    }
+
+.questionmark-top-right {
+    transform: rotate(15deg);
+    top: 200px;
+    right: 400px;
+    width: 300px;
+}
+
+    .questionmark-top-right img {
+        width: 300px;
+    }
+
+.questionmark-bottom-left {
+    transform: rotate(-70deg);
+    left: 370px;
+    bottom: 100px;
+    width: 350px;
+}
+
+    .questionmark-bottom-left img {
+        width: 350px;
+    }
+
+.questionmark-bottom-right {
+    transform: rotate(-10deg);
+    width: 150px;
+    bottom: 200px;
+    right: 420px;
+    z-index: 2;
+}
+
+    .questionmark-bottom-right img {
+        width: 150px;
+    }
+
+.male-memoji {
+    position: absolute;
+    width: 250px;
+    bottom: -100px;
+    right: -100px;
+}
+
+    .male-memoji img {
+        width: 250px;
+    }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+    .container h1 {
+        margin-bottom: 50px;
+        font-weight: 900;
+        color: white;
+    }
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #BBC73B;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 30px;
+    gap: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.option {
+    display: block;
+    position: relative;
+    padding: 20px 10px 20px 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 2px solid #b3b33c;
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: -0.3px;
+    font-size: 2rem;
+    width: 550px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .option input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    background-color: #3d3d3d;
+    border: 2px solid #b3b33c;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.option:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.option input:checked ~ .checkmark {
+    background-color: #b3b33c;
+}
+
+.go-forward {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+    background-color: #BBC73B;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .go-forward:hover {
+        color: white;
+        background-color: #229ED9;
+        transition: 0.2s ease-in-out;
+    }
+
+@media (max-width: 1200px) {
+    .questionmark-top-left, .questionmark-top-right,
+    .questionmark-bottom-left, .questionmark-bottom-right {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 800px;
+        height: 100vh;
+    }
+
+        .container h1 {
+            margin-bottom: 20px;
+        }
+
+    .content {
+        border: none;
+        box-shadow: none;
+        width: 400px;
+    }
+
+    .male-memoji {
+        position: absolute;
+        width: 150px;
+        bottom: -50px;
+        right: 0px;
+    }
+
+        .male-memoji img {
+            width: 200px;
+        }
+
+    .option {
+        font-size: 1.2rem;
+        padding: 5px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 500px) {
+    .go-forward {
+        font-size: 1rem;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #404040;
+}
+
+.questionmark-top-left, .questionmark-top-right,
+.questionmark-bottom-left, .questionmark-bottom-right {
+    position: absolute;
+}
+
+.questionmark-top-left {
+    transform: scaleX(-1) rotate(-60deg);
+    left: 290px;
+    top: 100px;
+    width: 300px;
+    height: auto;
+}
+
+    .questionmark-top-left img{
+        width: 200px;
+    }
+
+.questionmark-top-right {
+    transform: rotate(15deg);
+    top: 200px;
+    right: 400px;
+    width: 300px;
+}
+
+    .questionmark-top-right img {
+        width: 300px;
+    }
+
+.questionmark-bottom-left {
+    transform: rotate(-70deg);
+    left: 370px;
+    bottom: 100px;
+    width: 350px;
+}
+
+    .questionmark-bottom-left img {
+        width: 350px;
+    }
+
+.questionmark-bottom-right {
+    transform: rotate(-10deg);
+    width: 150px;
+    bottom: 200px;
+    right: 420px;
+    z-index: 2;
+}
+
+    .questionmark-bottom-right img {
+        width: 150px;
+    }
+
+.male-memoji {
+    position: absolute;
+    width: 250px;
+    bottom: -100px;
+    right: -100px;
+}
+
+    .male-memoji img {
+        width: 250px;
+    }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+    .container h1 {
+        margin-bottom: 50px;
+        font-weight: 900;
+        color: white;
+    }
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #BBC73B;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 30px;
+    gap: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.option {
+    display: block;
+    position: relative;
+    padding: 20px 10px 20px 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 2px solid #b3b33c;
+    border-radius: 10px;
+    color: #fff;
+    letter-spacing: -0.3px;
+    font-size: 2rem;
+    width: 550px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .option input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    background-color: #3d3d3d;
+    border: 2px solid #b3b33c;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.option:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.option input:checked ~ .checkmark {
+    background-color: #b3b33c;
+}
+
+.go-forward {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+    background-color: #BBC73B;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .go-forward:hover {
+        color: white;
+        background-color: #229ED9;
+        transition: 0.2s ease-in-out;
+    }
+
+@media (max-width: 1200px){
+    .questionmark-top-left, .questionmark-top-right,
+    .questionmark-bottom-left, .questionmark-bottom-right {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 800px;
+        height: 100vh;
+    }
+
+    .container h1 {
+        margin-bottom: 20px;
+    }
+
+    .content{
+        border: none;
+        box-shadow: none;
+        width: 400px;
+    }
+
+    .male-memoji {
+        position: absolute;
+        width: 150px;
+        bottom: -50px;
+        right: 0px;
+    }
+
+    .male-memoji img{
+        width: 200px;
+    }
+
+    .option {
+        font-size: 1.2rem;
+        padding: 5px;
+        width: 350px;
+    }
+}*/

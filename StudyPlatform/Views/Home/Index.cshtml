@@ -1,0 +1,306 @@
+﻿@{
+    ViewData["Title"] = "Uniqum School";
+}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tektur:wght@800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" />
+
+@* <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs/http-streaming"></script>
+ *@
+
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageGreetingContent.css" />
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageModulesContent.css" />
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageTeachersContent.css" />
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageQuestionAnswer.css" />
+
+<link rel="stylesheet" href="~/css/LandingPage/LandingPageWhyIsItWorthItContent.css" />
+
+<link rel="stylesheet" href="/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesWhatYouGetContent.css" />
+<link rel="stylesheet" href="/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesVideoContent.css" />
+<link rel="stylesheet" href="/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesOverviewContent.css" />
+
+<div class="landing-page-container">
+    @* Landing showcase *@
+    <div class="greeting-content">
+        <div class="greeting-text">
+            <h1>ОНЛАЙН ШКОЛА ,,, ДЛЯ УЧНІВ 9-12 КЛАСУ</h1>
+            <h2>З нами ти зможеш вчитися коли завгодно.</h2>
+            <a class="forward-btn" asp-area="" asp-controller="Questionare" asp-action="EntryMessage"> Начать</a>
+            <img class="arrow-img" src="~/Images/LandingPage/GreetingContent/Arrow.png" />
+        </div>
+        <div class="greeting-images">
+            <div class="green-rounded-container">
+                <div class="blue-clear-circle"></div>
+                <div class="blue-circle"></div>
+                <img class="girl-landing-img" src="~/Images/LandingPage/GreetingContent/Girl.png" />
+                <img class="speech-landing-img" src="~/Images/LandingPage/GreetingContent/SpeechText.png" />
+            </div>
+        </div>
+    </div>
+
+    @* Classes Models showcase *@
+    <div class="module-container">
+        <h1>ПРЕДМЕТИ</h1>
+        <div class="module-content">
+            <div class="math-container">
+                <div class="icon-container-math">
+                    <div class="blue-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (1).png" />
+                </div>
+                <h2 class="module-name">Математика</h2>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="math">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+            <div class="history-container">
+                <div class="icon-container-history">
+                    <div class="grey-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (3).png" />
+                </div>
+                <h2 class="module-name">История</h2>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="history">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+            <div class="ukranian-container">
+                <div class="icon-container-ukranian">
+                    <div class="green-module-circle"></div>
+                    <img src="~/Images/LandingPage/ModuleContent/moduleIcons (2).png" />
+                </div>
+                <h2 class="module-name">Українська мова</h2>
+                <a class="module-button" asp-area="" asp-controller="Classes" asp-action="SelectedClass" asp-route-s="language">
+                    <img class="arrow-btn" src="/Images/Icons/ArrowIconBtn.svg" />
+                </a>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="forward-secondary-btn" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">
+            Начать
+        </a>
+    </div>
+
+    @* Teacher showcase *@
+    <div class="teachers-container">
+        <h1>НАШІ ВЧИТЕЛІ</h1>
+        <div class="teachers-content">
+
+            <div class="teacher-1">
+                <div class="teacher-img">
+                    @* <img src="~/Images/TeacherPhotos/kiriloNuotraukosDarner.png" /> *@
+                </div>
+                <div class="teacher-content-description">
+                    <h1>ПІБ</h1>
+                    <h2>ОПИС І ЗАСЛУГИ</h2>
+                </div>
+            </div>
+
+            <div class="teacher-2">
+                <div class="teacher-img">
+                    <img src="~/Images/TeacherPhotos/IMG_0853.PNG" />
+                </div>
+                <div class="teacher-content-description">
+                    <h1>ПІБ</h1>
+                    <h2>ОПИС І ЗАСЛУГИ</h2>
+                </div>
+            </div>
+
+            <div class="teacher-3">
+                <div class="teacher-img">
+                    <img src="~/Images/TeacherPhotos/IMG_0854.PNG" />
+                </div>
+                <div class="teacher-content-description">
+                    <h1>ПІБ</h1>
+                    <h2>ОПИС І ЗАСЛУГИ</h2>
+                </div>
+            </div>
+
+            <div class="teacher-4">
+                <div class="teacher-img">
+                    <img src="~/Images/TeacherPhotos/IMG_0852.PNG" />
+                </div>
+                <div class="teacher-content-description">
+                    <h1>ПІБ</h1>
+                    <h2>ОПИС І ЗАСЛУГИ</h2>
+                </div>
+            </div>
+        </div>
+
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="forward-secondary-btn" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">
+            Начать
+        </a>
+    </div>
+
+    @* What students get *@
+    <div class="what-you-get-container">
+        <h1>ПЕРЕВАГИ</h1>
+        <h2>Ставши нашим учнем ти отримаєш:</h2>
+        <div class="what-you-get-content">
+            <div class="col">
+                <div class="offer-item">
+                    <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 1 row 1.png" />
+                    <h3>Індивідуальний план навчання</h3>
+                </div>
+                <div class="offer-item">
+                    <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 1 row 2.png" />
+                    <h3>Допомога з домашньою роботою</h3>
+                </div>
+                <div class="offer-item">
+                    <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 1 row 3.png" />
+                    <h3>Безмежний доступ до записів уроків</h3>
+                </div>
+            </div>
+            <div class="col-divider"></div>
+            <div class="col">
+                <div class="offer-item">
+                    <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 2 row 1.png" />
+                    <h3>Інтерактивні уроки</h3>
+                </div>
+                <div class="offer-item">
+                    <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 2 row 2.png" />
+                    <h3>Подарунки та окуляри</h3>
+                </div>
+                <div class="offer-item">
+                    <img src="~/Images/ReviewPlatformFeatures/WhatYouGetImg/col 2 row 3.png" />
+                    <h3>Мотивуюча спільнота</h3>
+                </div>
+            </div>
+        </div>
+
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="forward-secondary-btn" asp-area="" asp-controller="Questionare" asp-action="EntryMessage"> Начать</a>
+    </div>
+
+    @*Why is it worth it *@
+    <div class="worth-it-container">
+        <h1>З НАМИ ВИГІДНО</h1>
+        <div class="worth-it-content">
+            <div class="wic-green-block">
+                <div class="wic-blue-circle"></div>
+                <img class="wic-blue-block-memoji" src="~/Images/LandingPage/WhyIsItWorthIt/whyIsItWorthItMemoji (2).png" />
+                <img class="wic-blue-block-mark" src="~/Images/LandingPage/WhyIsItWorthIt/whyIsItWorthItContainerMark2.png" />
+                <div class="first-content-level">
+                    ОДИН УРОК У НАС
+                </div>
+                <div class="second-content-level-green">
+                    <h2>цена от 20 грн за урок</h2>
+                    <h2>Гарантия возврата денег в течении 14 дней</h2>
+                </div>
+            </div>
+            <div class="wic-blue-block">
+                <div class="wic-green-circle"></div>
+                <img class="wic-blue-green-memoji" src="~/Images/LandingPage/WhyIsItWorthIt/whyIsItWorthItMemoji (1).png" />
+                <img class="wic-blue-green-mark" src="~/Images/LandingPage/WhyIsItWorthIt/whyIsItWorthItContainerMark.png" />
+                <div class="first-content-level">
+                    ОДИН УРОК У РЕПЕТИТОРА
+                </div>
+                <div class="second-content-level-blue">
+                    <h2>ціна від 100 грн за заняття</h2>
+                    <h2>без можливості повернення грошей </h2>
+                </div>
+            </div>
+        </div>
+        
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="forward-secondary-btn" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Начать</a>
+    </div>
+
+    @* Overview *@
+    <div class="overview-container" style="margin-bottom: 60px;">
+        <h1>ВІДГУКИ</h1>
+        <div class="overview-content">
+            <div class="grey-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (1).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+            <div class="green-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (3).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+            <div class="grey-container">
+                <img src="~/Images/ReviewPlatformFeatures/Overview/Overview memojis (2).png" />
+                <div class="overview-description">
+                    <h1>ПІБ</h1>
+                    <h2>Місце відгуку</h2>
+                </div>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Начать</a>
+    </div>
+
+    @* Video *@
+   <div class="video-container">
+        <h1>ХІД РОБОТИ</h1>
+        <h2>Цікаво як ми проводимо уроки?</h2>
+        <div class="video-content">
+            <div class="video-memoji-hand">
+                <img src="~/Images/ReviewPlatformFeatures/memoji-hand-pointing-down.png" />
+            </div>
+            <div class="video">
+                <video id="my-video"
+                       class="video-js vjs-default-skin"
+                       controls
+                       preload="auto"
+                       data-setup='{}'>
+                    <source src="@ViewBag.HlsUrl" type="application/x-mpegURL">
+                </video>
+                <div class="video-shadow"></div>
+                <div class="dots">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div>
+        </div>
+        <h3>СТВОРИ СВІЙ ПЛАН НАВЧАННЯ</h3>
+        <a class="move-forward" asp-area="" asp-controller="Questionare" asp-action="EntryMessage">Начать</a>
+    </div>
+
+    @* Question-Answer *@
+    <div class="question-answer-content">
+        <h1>ПИТАННЯ - ВІДПОВІДЬ</h1>
+        <div class="question-answer-content-content">
+            <div class="question-1-content">
+                <div class="question-row">
+                    <h2>Скільки часу триває 1 урок?</h2>
+                    <div class="question-circle">01</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-2-content">
+                <div class="question-row">
+                    <h2>Яка максимальна кількість осіб у групі?</h2>
+                    <div class="question-circle">02</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-3-content">
+                <div class="question-row">
+                    <h2>Які умови повернення грошей?</h2>
+                    <div class="question-circle">03</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+            <div class="question-4-content">
+                <div class="question-row">
+                    <h2>Чи можна обрати конкретного вчителя?</h2>
+                    <div class="question-circle">04</div>
+                </div>
+                <img src="~/Images/LandingPage/QuestionAnswerContent/GreenTalkBox.png" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var player = videojs('my-video');
+    player.play();
+</script>

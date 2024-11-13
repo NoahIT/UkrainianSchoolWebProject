@@ -1,0 +1,232 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model StudyPlatform.ViewModels.SelectPlanViewModel
+@{
+    ViewData["Title"] = "Наші плани";
+    Layout = "~/Views/Shared/_StaticNavBarLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-x: hidden !important;
+        margin-bottom: -60px;
+    }
+
+    .nav-link.green-button {
+        display: none;
+    }
+
+    .navbar-nav {
+        justify-content: flex-end;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/SelectPlan/SelectPlan.css" />
+<link rel="stylesheet" href="~/css/SelectPlan/SubjectForm.css" />
+<link rel="stylesheet" href="~/css/SelectPlan/SelectPlanModuleDescriptionContent.css" />
+<link rel="stylesheet" href="~/css/SelectPlan/SelectPlanModuleContent.css" />
+<link rel="stylesheet" href="~/css/SelectPlan/SelectPlanOffer.css" />
+<link rel="stylesheet" href="~/css/NavBar/overrideNavButtons.css" asp-append-version="true" />
+<script src="~/js/selectPlan.js"></script>
+
+<link rel="stylesheet" href="~/css/ReviewPlatfromFeatures/ReviewPlatfromFeaturesCalendarContent.css" />
+
+<div class="container" id="ForScroll" style="margin-top: 95px;">
+    <h1 class="select-class-heading">ВИБЕРИ КЛАС</h1>
+
+    <div class="landing-content-main">
+        <div class="landing-content">
+            <div class="dropdown">
+                <div class="select-class-img-memoji-bell">
+                    <img src="~/Images/SelectPlan/LandingBell.png" />
+                </div>
+                <button class="dropdown-toggle dropdown-custom" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 180px;">
+                    ВИБЕРИ
+                </button>
+                <ul class="dropdown-menu custom-dropdown-background" aria-labelledby="dropdownMenuButton">
+                    <li><a href="#" class="dropdown-item" onclick="selectClass('10 КЛАС')" data-bs-toggle="modal" data-bs-target="#classesModal">10 КЛАС</a></li>
+                    <li><a href="#" class="dropdown-item" onclick="selectClass('11 КЛАС')" data-bs-toggle="modal" data-bs-target="#classesModal">11 КЛАС</a></li>
+                </ul>
+                <div class="select-class-img-memoji-girl">
+                    <img src="~/Images/SelectPlan/LandingMemoji.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="classesModal" tabindex="-1" aria-labelledby="classesModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="classesModalTitle">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="select-class-img-memoji-second-bell" src="~/Images/SelectPlan/LandingBell.png" />
+                        <div class="subject-form-contents" id="subject-selection">
+                            <label class="subject-option">
+                                <input type="checkbox" name="subject" onclick="onCheckboxChange()" value="3" id="mathematics">
+                                Математика
+                            </label>
+                            <label class="subject-option">
+                                <input type="checkbox" name="subject" onclick="onCheckboxChange()" value="2" id="history">
+                                Історія
+                            </label>
+                            <label class="subject-option">
+                                <input type="checkbox" name="subject" onclick="onCheckboxChange()" value="1" id="ukrainian-language">
+                                Українська мова
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">продовжувати</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-content ">
+        <h1>ВИБЕРИ ПЛАН</h1>
+
+        <div class="module-selection">
+            <div class="module-content-container">
+                <div class="module-content-heder">
+                    <img src="~/Images/SelectPlan/HeadingNumber1.png" />
+                    <h1>Все предметы</h1>
+                </div>
+                <div class="module-content-information">
+                    <div class="module-group">
+                        <h2>Ціна від </h2>
+                        <h3>1289 грн /мес</h3>
+                    </div>
+                    <a class="purchase-button" onclick="scrollToSection()">ОБРАТИ</a>
+                </div>
+                <ul class="module-detailed-description">
+                    <li>Все предметы</li>
+                    <li>Групові уроки</li>
+                    <li>Записи уроків</li>
+                    <li>Спільнота</li>
+                    <li>Індивідуальна допомога </li>
+                    <li>24 уроку на місяць </li>
+                </ul>
+            </div>
+
+            <div class="module-content-container">
+                <div class="module-content-heder">
+                    <img src="~/Images/SelectPlan/HeadingNumber2.png" />
+                    <h1>1 Предмет</h1>
+                </div>
+                <div class="module-content-information">
+                    <div class="module-group">
+                        <h2>Цена от </h2>
+                        <h3>500 грн /міс</h3>
+                    </div>
+                    <a class="purchase-button" onclick="scrollToSection()">ОБРАТИ</a>
+                </div>
+                <ul class="module-detailed-description">
+                    <li>1 обраний предмет</li>
+                    <li>Групові уроки</li>
+                    <li>Записи уроків</li>
+                    <li>Спільнота</li>
+                    <li>Індивідуальна допомога </li>
+                    <li>8 уроків на місяць </li>
+                </ul>
+            </div>
+
+            <div class="module-content-container">
+                <div class="module-content-heder">
+                    <img src="~/Images/SelectPlan/HeadingNumber3.png" />
+                    <h1>2 Предмета</h1>
+                </div>
+                <div class="module-content-information">
+                    <div class="module-group">
+                        <h2>Цена от </h2>
+                        <h3>875 грн /міс</h3>
+                    </div>
+                    <a class="purchase-button" onclick="scrollToSection()">ОБРАТИ</a>
+                </div>
+                <ul class="module-detailed-description">
+                    <li>2 обрані предмети</li>
+                    <li>Групові уроки</li>
+                    <li>Записи уроків</li>
+                    <li>Спільнота</li>
+                    <li>Індивідуальна допомога </li>
+                    <li>16 уроків на місяць </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modules-information-container">
+        <div class="module-garuantee-container">
+            <div class="module-des-content">
+                <h2>гарантія повернення грошей</h2>
+                <h3>Протягом 14 днів ми надаємо можливість повернути гроші якщо вам не сподобалося як пройшов урок</h3>
+            </div>
+
+            <img src="~/Images/SelectPlan/ModuleGaruantee.png" />
+        </div>
+        <div class="module-secuirity-container">
+            <div class="module-des-content">
+                <h2>безпечний платіж</h2>
+            </div>
+
+            <img src="~/Images/SelectPlan/ModuleSecurity.png" />
+        </div>
+        <div class="module-payment-container">
+            <div class="module-des-content">
+                <h2>види оплати</h2>
+                <ul>
+                    <li>Visa</li>
+                    <li>Mastercard</li>
+                    <li>PayPal</li>
+                </ul>
+            </div>
+            <img src="~/Images/SelectPlan/ModulePayment.png" />
+        </div>
+    </div>
+
+    @await Component.InvokeAsync("Schedule")
+    
+    <div class="offer-content" id="plan-selection">
+        <h1>ВИБЕРИ ПЛАН</h1>
+        <div class="plan-container">
+            @foreach (var group in Model.SubscriptionTypes.GroupBy(s => s.LessonsCount))
+            {
+                <div class="plans-group" data-lessons-count="@group.Key" style="display: none;">
+                    @foreach (var subscription in group)
+                    {
+                        <form method="post" action="/register">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" class="GradeSubjectClassInput" id="GradeClass" name="GradeClass" value="10" />
+                            <input type="hidden" name="subscriptionId" value="@subscription.Id"/>
+                            <input type="hidden" id="SubjectsId" name="SubjectsId" value=""/>
+
+                            <div class="plan" id="plan-@subscription.Id">
+                                @if (subscription.Discount != "NEW")
+                                {
+                                    <div class="discount-tag">-@subscription.Discount</div>
+                                }
+                                
+                                <div class="plan-content">
+                                    <div class="details">
+                                        <h2>@subscription.Months МІСЯЦІВ</h2>
+                                        @if (subscription.Discount != "NEW")
+                                        {
+                                            <p class="original-price">@subscription.FirstPrice грн/міс—</p>
+                                        }
+                                        <p class="discounted-price">@subscription.Price грн / міс</p>
+                                        <button>ОБРАТИ</button>
+                                        @if (subscription.Discount != "NEW")
+                                        {
+                                            <p class="footnote">Влітку план можна зупинити</p>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

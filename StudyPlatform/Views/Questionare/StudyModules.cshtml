@@ -1,0 +1,92 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Виберіть навчання";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareStudyModules.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+
+<div class=" top-right"></div>
+<div class=" bottom-right"></div>
+<div class=" top-left"></div>
+
+<div class="girl-memoji">
+    <img src="~/Images/QuestionareImages/8_StudyModules/GirlMemoji.png"/>
+</div>
+
+<div class="conatainer">
+    <h1>ОБЕРИ ПРЕДМЕТ НАВЧАННЯ</h1>
+    
+    <form class="content" action="/ourSchoolPerks" method="post" onsubmit="return updateStudyModules()">
+            <div class="checkbox-container-main">
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/8_StudyModules/BookIcn.png" />
+                    </div>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="option1">
+                <label for="option1">Українська мова</label>
+                </div>
+            </div>
+            <div class="checkbox-container-main">
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/8_StudyModules/CalculatorIcn.png" />
+                    </div>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="option2">
+                    <label for="option2">Математика</label>
+                </div>
+            </div>
+            <div class="checkbox-container-main">
+                <div class="memojiCircle">
+                    <div class="memojiCircleInnerBg">
+                        <img src="~/Images/QuestionareImages/8_StudyModules/ClockIcn.png" />
+                    </div>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="option3">
+                    <label for="option3">История</label>
+                </div>
+            </div>
+
+            <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+            <input type="hidden" name="Motivation" value="@Model.Motivation" />
+            <input type="hidden" name="LearningFormat" value="@Model.LearningFormat" />
+            <input type="hidden" name="LearningTarget" id="LearningTarget" value="@Model.LearningTarget" />
+            <input type="hidden" name="Class" id="Class" value="@Model.Class" />
+            
+            <input type="hidden" id="StudyModules" name="StudyModules" value=""/>
+
+        <button class="go-forward" type="submit">Ідіть уперед</button>
+    </form>
+    
+    <script>
+        function updateStudyModules() {
+            const checkboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+            const selectedValues = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => {
+                    const label = document.querySelector(`label[for="${checkbox.id}"]`);
+                    return label ? label.textContent : '';
+                });
+
+            if (selectedValues.length === 0) {
+                alert("Пожалуйста, выберите хотя бы один вариант.");
+                return false; // Prevent form submission
+            }
+
+            document.getElementById('StudyModules').value = selectedValues.join(', ');
+            return true; // Allow form submission
+        }
+    </script>
+</div>

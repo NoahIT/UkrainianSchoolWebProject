@@ -1,0 +1,118 @@
+﻿@model StudyPlatform.ViewModels.StreamViewModel
+
+
+<div class="live-chat-container">
+    <div class="user-count">
+        Підключено користувачів: <span id="userCount">0</span>
+    </div>
+
+    <div class="live-messages" id="live-messages">
+    </div>
+
+    <div class="message-input">
+        <input type="text" id="messageText" placeholder="Твоє повідомлення" onkeypress="handleKeyPress(event)">
+        <div class="message-btn">
+            <button onclick="sendMessage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.9/signalr.min.js"></script>
+
+
+<script>
+    const abbrName = '@Model.Stream.AbbrName';
+    const userName = '@Model.FullName';
+    const customSession = getCookie('CustomSession');
+
+    let lastMessageTime = 0;
+    const minMessageInterval = 3000;
+
+    console.log(customSession);
+
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("https://uniqum.school/chatHub/chatHub", {
+            withCredentials: true  
+        })
+        .build();
+
+    let isConnectionEstablished = false;
+
+    connection.start().then(function () {
+        isConnectionEstablished = true;
+
+        connection.invoke("JoinRoom", abbrName, userName, customSession).catch(function (err) {
+            console.error("Failed to join the room: ", err.toString());
+        });
+
+        connection.on("ReceiveMessage", function (user, message) {
+            const msg = document.createElement("div");
+            msg.classList.add("message");
+            msg.innerHTML = `
+                        <div class="message-header">
+                            <div class="message-user-icon">👤</div>
+                            <div class="message-user-name">${user}</div>
+                        </div>
+                        <div class="message-text">${message}</div>`;
+            document.getElementById("live-messages").appendChild(msg);
+
+            scrollToBottom();
+        });
+    }).catch(function (err) {
+        console.error("SignalR connection error: ", err.toString());
+    });
+
+    connection.on("UpdateUserCount", function (count) {
+        document.getElementById("userCount").innerText = count;
+    });
+
+    function sendMessage() {
+        const message = document.getElementById("messageText").value.trim();
+        const currentTime = new Date().getTime();
+
+        // Проверка на наличие сообщения и минимальный интервал между отправками
+        if (!message) {
+            console.error("Cannot send an empty message.");
+            return;
+        }
+
+        if (currentTime - lastMessageTime < minMessageInterval) {
+            console.error("You are sending messages too fast. Please wait a moment.");
+            return;
+        }
+
+        if (isConnectionEstablished) {
+            connection.invoke("SendMessageToRoom", abbrName, userName, message).catch(function (err) {
+                console.error("Failed to send message: ", err.toString());
+            });
+
+            document.getElementById("messageText").value = '';  // Очистка поля ввода
+            lastMessageTime = currentTime; // Обновляем время отправки сообщения
+        } else {
+            console.error("Cannot send message, connection is not established.");
+        }
+    }
+
+    function scrollToBottom() {
+        const messagesContainer = document.getElementById("live-messages");
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+            event.preventDefault();
+        }
+    }
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+</script>

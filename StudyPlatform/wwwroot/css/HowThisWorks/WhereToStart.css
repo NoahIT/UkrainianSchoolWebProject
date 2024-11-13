@@ -1,0 +1,223 @@
+﻿.where-to-start-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 100vw;
+    height: 500px;
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin: 100px 0 300px 0;
+}
+
+.where-to-start-content {
+}
+
+    .where-to-start-content h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: left;
+        width: 1000px;
+        margin: 30px;
+        margin-bottom: 80px;
+    }
+
+
+.wts-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: 2px solid black;
+    background-color: #229ED9;
+    width: 600px;
+    height: 300px;
+    border-radius: 0 30px 30px 30px;
+}
+
+    .wts-content h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        width: 500px;
+    }
+
+.loading-black, .loading-green, .male-memoji-wts {
+    position: absolute;
+}
+
+.loading-black {
+    top: -109px;
+    right: -109px;
+    width: 210px;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+.loading-green {
+    left: -100px;
+    z-index: -1;
+    width: 300px;
+}
+
+.male-memoji-wts {
+    right: -80px;
+    top: -80px;
+    background: grey;
+    border-radius: 50%;
+    width: 150px;
+    z-index: 3;
+}
+
+@media(max-width: 1024px) {
+    .where-to-start-content h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .loading-green {
+        display: none;
+    }
+
+    .wts-content {
+        width: 300px;
+        border-radius: 30px;
+        margin-top: 10px;
+    }
+
+        .wts-content h2 {
+            width: 250px;
+            font-size: 1.2rem;
+        }
+
+
+    .loading-black {
+        top: -80px;
+        right: 105px;
+        width: 110px;
+    }
+
+    .male-memoji-wts {
+        right: 90px;
+        top: -70px;
+        background: none;
+        border-radius: 50%;
+        width: 120px;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.where-to-start-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/Images/Backgrounds/RectangleBackgorund.svg);
+    background-size: 500px;
+    width: 100vw;
+    height: 500px;
+    box-shadow: 20px 20px 200px 50px white inset, inset 0 0 200px 20px white;
+    margin: 100px 0 300px 0;
+}
+
+.where-to-start-content {
+    
+}
+
+    .where-to-start-content h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: left;
+        width: 1000px;
+        margin: 30px;
+        margin-bottom: 80px;
+    }
+
+
+.wts-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: 2px solid black;
+    background-color: #229ED9;
+    width: 600px;
+    height: 300px;
+    border-radius: 0 30px 30px 30px;
+}
+
+    .wts-content h2{
+        font-size: 1.3rem;
+        font-weight: 600;
+        width: 500px;
+    }
+
+    .loading-black, .loading-green, .male-memoji-wts {
+        position: absolute;
+    }
+
+.loading-black {
+    top: -109px;
+    right: -109px;
+    width: 210px;
+    z-index: -1;
+    transform: rotate(30deg);
+}
+
+.loading-green {
+    left: -100px;
+    z-index: -1;
+    width: 300px;
+}
+
+.male-memoji-wts{
+    right: -80px;
+    top: -80px;
+    background: grey;
+    border-radius: 50%;
+    width: 150px;
+    z-index: 3;
+}
+
+@media(max-width: 1024px){
+    .where-to-start-content h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .loading-green{
+        display: none;
+    }
+
+    .wts-content {
+        width: 300px;
+        border-radius: 30px;
+        margin-top: 10px;
+    }
+
+    .wts-content h2{
+        width: 250px;
+        font-size: 1.2rem;
+    }
+
+
+    .loading-black {
+        top: -80px;
+        right: 105px;
+        width: 110px;
+    }
+
+    .male-memoji-wts {
+        right: 90px;
+        top: -70px;
+        background: none;
+        border-radius: 50%;
+        width: 120px;
+    }
+
+}*/

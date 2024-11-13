@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Ласкаво просимо";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<style>
+    html, body {
+        overflow-y: hidden !important;
+    }
+</style>
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareEntryMassage.css">
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css">
+
+<div class=" top-left"></div>
+<div class=" top-right"></div>
+<div class=" bottom-left"></div>
+<div class=" bottom-right"></div>
+
+<div class="container">
+    <h1>
+        ДАВАЙ ЗНАЙОМИТИСЯ!
+    </h1>
+
+    <div class="content">
+        <div class="man-memoji">
+            <img src="~/Images/QuestionareImages/1_Message/MenMemoji.png" alt="Man Memoji">
+        </div>
+        <div class="text-box">
+            <p>Опитування займе всього кілька хвилин</p>
+            <form action="/knowlegeRating" method="post">
+                <button class="go-forward" type="submit">Ідіть уперед</button>
+            </form>
+        </div>
+        <div class="girl-memoji">
+            <img src="~/Images/QuestionareImages/1_Message/GirlMemoji.png" alt="Girl Memoji">
+        </div>
+    </div>
+    
+    <div class="books">
+        <img src="~/Images/QuestionareImages/1_Message/Books.png" alt="Books">
+    </div>
+</div>

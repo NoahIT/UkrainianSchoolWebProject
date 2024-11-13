@@ -1,0 +1,312 @@
+﻿@model StudyPlatform.ViewModels.BuyClassesViewModel
+@{
+    ViewData["Title"] = "Мої уроки";
+}
+
+<style>
+    .module-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .my-classes-content h1 {
+        margin: 30px;
+    }
+
+</style>
+
+<link rel="stylesheet" href="~/css/BuyClasses/BuyClasses.css" />
+<link rel="stylesheet" href="~/css/BuyClasses/BuyClassesModules.css" />
+<link rel="stylesheet" href="~/css/BuyClasses/BuyClassesModuleDescription.css" />
+
+<link rel="stylesheet" href="~/css/HelloUser/HelloUser.css" />
+<link rel="stylesheet" href="~/css/HelloUser/HelloUserModules.css" />
+<link rel="stylesheet" href="~/css/HelloUser/HelloUserMyClassesEntry.css" />
+<link rel="stylesheet" href="~/css/HelloUser/HelloUserMyClassesSubject.css" />
+
+<div class="container">
+    @Html.AntiForgeryToken()
+
+    @if (!Model.IsSubscription)
+    {
+        <div class="my-classes-entry-content">
+            <div class="my-classes-entry-column">
+                <a class="move-forward">
+                    МОЇ УРОКИ
+                    <img class="loading-black-wheel" src="~/Images/HowThisWorksImages/HowThisWorksIcon LoadingBlack.png" />
+                    <img class="lock-icon" src="~/Images/HelloUserPage/LockIconBlack.png" />
+                </a>
+            </div>
+            <div class="my-classes-entry-column-blue">
+                <div class="white-test-content">
+                    Усі уроки закриті - придбай підписку та насолоджуйся усіма матеріалами та перевагами підписки
+                </div>
+                <div class="female-memoji">
+                    <img src="~/Images/HelloUserPage/femaleExplosivememoji.png" />
+                </div>
+                <a class="move-forward" asp-area="" asp-controller="SelectPlan" asp-action="SelectPlan">КУПИТИ УРОКИ</a>
+            </div>
+        </div>
+
+
+        <div class="my-classes-content">
+            <h1>@Model.ContentName</h1>
+            <div class="my-classes-info">
+                <div class="slider-wrapper">
+                    <div class="arrow-container">
+                        <button class="arrow left-arrow" onclick="previousLessons()">&#9664;</button>
+                    </div>
+                    
+                    <div class="slider">
+                        @* // CIA NIEKO NEDET *@
+                    </div>
+                    <div class="arrow-container">
+                        <button class="arrow right-arrow" onclick="nextLessons()">&#9654;</button>
+                    </div>
+                    <div class="mobile-arrows" style="bottom: -20px;">
+                        <button class="arrow left-arrow blue-box-arrow" onclick="previousLessons()">&#9664;</button>
+                        <button class="arrow blue-box-arrow" onclick="nextLessons()">&#9654;</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            var currentIndex = 0;
+            var maxIndex = 0;
+
+            function getAntiForgeryToken() {
+                return $('input[name="__RequestVerificationToken"]').val();
+            }
+
+            function escapeHtml(unsafe) {
+                if (unsafe === null || unsafe === undefined) {
+                    return "";
+                }
+
+                return unsafe
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+
+            function loadLessons(pageIndex) {
+                $.ajax({
+                    url: '@Url.Action("GetLessonsByAbbr", "Api")',
+                    type: 'GET',
+                    data: {
+                        pageIndex: pageIndex,
+                        abbr: '@Model.Abbr'
+                    },
+                    headers: {
+                        'RequestVerificationToken': getAntiForgeryToken()
+                    },
+                    success: function (data) {
+                        var lessonsContainer = $('.slider');
+                        if (data.length > 0) {
+                            lessonsContainer.empty();
+
+                            data.forEach(function (lesson, index) {
+                                // Экранирование всех динамических текстовых данных
+                                let safeName = escapeHtml(lesson.name);
+                                let safeTeacherName = escapeHtml(lesson.teacherName);
+                                let safeDate = escapeHtml(lesson.date);
+
+                                let imageIndex = index % @Model.Images.Count;
+                                let images = @Html.Raw(Json.Serialize(Model.Images));
+                                let imageSrc = images[imageIndex];
+
+                                lessonsContainer.append(
+                                    `<div class="my-classes-column">
+                                                    <img src="${imageSrc}"/>
+                                                    <div class="class-details">
+                                                        <h1>${safeName}</h1>
+                                                        <h2>${safeTeacherName} <br> (${safeDate})</h2>
+                                                        <img class="lock-icon-b" src="@Url.Content("~/Images/HelloUserPage/LockIconBlack.png")"/>
+                                                    </div>
+                                                </div>`
+                                );
+                            });
+
+                            console.log(data);
+
+                            maxIndex = data.length;
+                        } else if (currentIndex === 0 && data.length === 0) {
+                            lessonsContainer.empty();
+                            lessonsContainer.append(
+                                `<div class="my-classes-column">
+                                     <h2>Поки що уроків не знайдено.</h2>
+                                </div>`
+                            );
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("An error occurred: " + status + " " + error);
+                    }
+                });
+            }
+
+
+            function previousLessons() {
+                console.log(currentIndex);
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    loadLessons(currentIndex);
+                }
+            }
+
+            function nextLessons() {
+                console.log(currentIndex);
+
+                if (maxIndex === 3) {
+                    currentIndex++;
+                    loadLessons(currentIndex);
+                }
+            }
+
+            loadLessons(currentIndex);
+        </script>
+    }
+    else
+    {
+        @await Component.InvokeAsync("Subjects")
+
+        <div class="my-classes-content-detailed">
+            <div class="blue-container">
+                <h1>Зміст уроків на 9<br /> місяців уперед</h1>
+
+                <div class="content-blue-container">
+                    <button class="arrow left-arrow blue-box-arrow" onclick="previousLessons()">&#9664;</button>
+                    <div class="left-side-panel">
+                        @* CIA IRGI NEDET *@
+                    </div>
+                    <div class="left-side-info">
+                        @* CIA IRGI NEDET *@
+                    </div>
+                    <button class="arrow blue-box-arrow" onclick="nextLessons()">&#9654;</button>
+                    <div class="mobile-arrows">
+                        <button class="arrow left-arrow blue-box-arrow" onclick="previousLessons()">&#9664;</button>
+                        <button class="arrow blue-box-arrow" onclick="nextLessons()">&#9654;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            var currentIndex = 0;
+            var maxIndex = 0;
+
+            function getAntiForgeryToken() {
+                return $('input[name="__RequestVerificationToken"]').val();
+            }
+
+            function escapeHtml(unsafe) {
+                return unsafe
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+
+            function loadLessons(pageIndex) {
+                $.ajax({
+                    url: '@Url.Action("GetLessonByAbbrAndValid", "Api")',
+                    type: 'GET',
+                    data: {
+                        pageIndex: pageIndex,
+                        abbr: '@Model.Abbr',
+                        klass: '@Model.Klass'
+                    },
+                    headers: {
+                        'RequestVerificationToken': getAntiForgeryToken()
+                    },
+                    success: function (data) {
+                        var lessonsContainer = $('.left-side-info');
+                        var leftSideBlock = $('.left-side-panel');
+
+                        console.log(data);
+
+                        if (data.length > 0) {
+                            lessonsContainer.empty();
+                            leftSideBlock.empty();
+
+                            data.forEach(function (lesson, index) {
+
+                                var safeName = escapeHtml(lesson.name);
+                                var safeDesc = escapeHtml(lesson.description);
+                                var safeSource = escapeHtml(lesson.source);
+                                leftSideBlock.append(
+                                    `<div class="boook-icn">
+                                                    <a href="${safeSource}" target="_blank" rel="noopener noreferrer"><img class="book-img-subject-description" src="@Url.Content("~/Images/BuyClasses/BookIconBlack.png")"/></a>
+                                                 </div>`
+                                );
+
+                                lessonsContainer.append(
+                                    `<div class="classes-detailed-description">
+                                                          <h1>${safeName}</h1>
+                                                         <h2>${safeDesc}</h2>
+                                                 </div>`
+                                );
+                            });
+
+                            maxIndex = data.length;
+                        } else if (data === null || (currentIndex === 0 && data.length === 0)) {
+                            lessonsContainer.empty();
+                            lessonsContainer.append(
+                                `
+                                <style>
+                                      .blue-box-arrow, .mobile-arrows{
+                                          display:none;
+                                      }
+                                        .content-blue-container{
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: centered;
+                                        }
+
+                                                    .my-classes-column h2{
+                                                        margin-left: -40px;
+                                                    }
+                                </style>
+                                <div class="my-classes-column">
+                                                                                   <h2 style="font-size: 1rem; font-weight: 500; text-align: center; width: 200px;">Пока уроков не найдено.</h2>
+                                            </div>`
+                            );
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("An error occurred: " + status + " " + error);
+                    }
+                });
+            }
+
+
+            function previousLessons() {
+                console.log(currentIndex);
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    loadLessons(currentIndex);
+                }
+            }
+
+            function nextLessons() {
+                console.log(currentIndex);
+
+                if (maxIndex === 3) {
+                    currentIndex++;
+                    loadLessons(currentIndex);
+                }
+            }
+
+            loadLessons(currentIndex);
+        </script>
+    }
+
+
+</div>

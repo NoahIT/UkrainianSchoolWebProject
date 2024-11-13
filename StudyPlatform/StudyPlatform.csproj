@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\ReviewPlafromFeatures\**" />
+    <Content Remove="Views\ReviewPlafromFeatures\**" />
+    <EmbeddedResource Remove="Views\ReviewPlafromFeatures\**" />
+    <None Remove="Views\ReviewPlafromFeatures\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\Classes\SelectedClass.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\_LiveStreamLayout.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\BuyClasses\BuyClassesModules.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\Classes\SelectedClass.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\HowThisWorks\HowThisWorksWhyUs.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\HowThisWorks\WhereToStart.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\LandingPage\LandingPageQuestionAnswer.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\LandingPage\LandingPageWhyIsItWorthItContent.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\ReviewPlatfromFeatures\ReviewPlatfromFeaturesTextContent.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\ReviewPlatfromFeatures\ReviewPlatfromFeaturesVideoContent.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\SelectPlan\SubjectForm.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\LandingPage\VideoContent\" />
+    <Folder Include="wwwroot\Images\LandingPage\Overviews\" />
+    <Folder Include="wwwroot\Images\LandingPage\WhatWeOfferContent\" />
+    <Folder Include="wwwroot\Images\LandingPage\TeachersContent\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="wwwroot\css\Classes\SelectedClass.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Classes\SelectedClass.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Classes\SelectedClass.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\_LiveStreamLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveStreamingServerNet.Transmuxer" Version="0.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\css\HelloUser\HelloUserMyClassesSubject.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

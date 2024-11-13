@@ -1,0 +1,36 @@
+﻿@model StudyPlatform.ViewModels.QuestionareViewModel
+@{
+    ViewData["Title"] = "Наші вчителі";
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/Questionare/QuestionareOurTeachers.css" />
+<link rel="stylesheet" href="~/css/Questionare/Background/Shadows.css" />
+
+<div class=" top-right"></div>
+<div class=" bottom-right"></div>
+<div class=" top-left"></div>
+
+<div class="memoji-hand">
+    <img src="~/Images/QuestionareImages/11_Gmail/HandMemoji.png" />
+</div>
+
+<div class="container">
+    <h1>Наші вчителі</h1>
+    
+    <div class="content">
+        <div class="iphone-container">
+            <img src="~/Images/QuestionareImages/3_OurTeachers/iPhone.png"/>
+        </div>
+        <div class="iphone-container">
+            <img src="~/Images/QuestionareImages/3_OurTeachers/iPhone.png" />
+        </div>
+        <div class="iphone-container">
+            <img src="~/Images/QuestionareImages/3_OurTeachers/iPhone.png" />
+        </div>
+    </div>
+    <form action="/motivation" method="post">
+        <button class="go-forward" type="submit">Ідіть уперед</button>
+        <input type="hidden" name="KnownlegeRating" value="@Model.KnownlegeRating"/>
+    </form>
+</div>

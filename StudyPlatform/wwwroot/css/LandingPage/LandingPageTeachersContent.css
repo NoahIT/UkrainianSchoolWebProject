@@ -1,0 +1,304 @@
+﻿.teachers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+    .teachers-container h1 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin: 80px 0 40px 0;
+    }
+
+.teachers-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.teacher-content-description h1 {
+    margin-top: 10px;
+}
+
+.teachers-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.teachers-content h2 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.teacher-img {
+    height: 180px;
+    width: 180px;
+    background-color: lightgray;
+    border-radius: 50%;
+    border: 3px solid grey;
+}
+
+    .teacher-img img {
+        height: 170px;
+        width: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: blur(0.5px);
+        margin-top: 2px;
+    }
+
+.teacher-1, .teacher-2,
+.teacher-3, .teacher-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    border-radius: 120px;
+    width: 220px;
+    padding: 20px 10px 10px 10px;
+}
+
+.teacher-1, .teacher-3 {
+    height: 600px;
+}
+
+.teacher-2, .teacher-4 {
+    height: 450px;
+}
+
+.teacher-1 {
+    background-color: #BBC73B;
+}
+
+.teacher-2 {
+    background-color: #404040;
+}
+
+.teacher-3 {
+    background-color: #229ED9;
+}
+
+.teacher-4 {
+    background-color: black;
+}
+
+@media (max-width: 1024px) {
+    .teachers-content {
+        flex-direction: column;
+    }
+
+    .teacher-1, .teacher-3,
+    .teacher-2, .teacher-4 {
+        width: 350px;
+        height: 150px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border-radius: 120px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .teacher-2, .teacher-4 {
+        flex-direction: row-reverse;
+    }
+
+    .teacher-1 .teacher-content-description,
+    .teacher-3 .teacher-content-description {
+        margin-right: 20px;
+    }
+
+    .teacher-2 .teacher-content-description,
+    .teacher-4 .teacher-content-description {
+        margin-left: 20px;
+    }
+
+    .teacher-content-description h1 {
+        font-size: 1.4rem;
+    }
+
+    .teacher-content-description h2 {
+        font-size: 0.8rem;
+    }
+
+    .teacher-img {
+        height: 140px;
+        width: 140px;
+    }
+
+        .teacher-img img {
+            height: 130px;
+            width: 130px;
+        }
+
+    .teachers-container h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .teachers-container h1 {
+        margin: 10px 0 20px 0;
+    }
+}
+
+/*-- COMMIT 101 STYLES BELOW: --*/
+
+/*.teachers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+.teachers-container h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 80px 0 40px 0;
+}
+
+.teachers-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.teacher-content-description h1{
+    margin-top: 10px;
+}
+
+.teachers-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.teachers-content h2 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.teacher-img {
+    height: 180px;
+    width: 180px;
+    background-color: lightgray;
+    border-radius: 50%;
+    border: 3px solid grey;
+}
+
+    .teacher-img img {
+        height: 170px;
+        width: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: blur(0.5px);
+        margin-top: 2px;
+    }
+
+.teacher-1, .teacher-2,
+.teacher-3, .teacher-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    border-radius: 120px;
+    width: 220px;
+    padding: 20px 10px 10px 10px;
+}
+
+.teacher-1, .teacher-3{
+    height: 600px;
+}
+
+.teacher-2, .teacher-4{
+    height: 450px;
+}
+
+.teacher-1 {
+    background-color: #BBC73B;
+}
+
+.teacher-2 {
+    background-color: #404040;
+}
+
+.teacher-3 {
+    background-color: #229ED9;
+}
+
+.teacher-4 {
+    background-color: black;
+}
+
+@media (max-width: 1024px){
+    .teachers-content{
+        flex-direction: column;
+    }
+
+    .teacher-1, .teacher-3,
+    .teacher-2, .teacher-4 {
+        width: 350px;
+        height: 150px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border-radius: 120px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .teacher-2, .teacher-4 {
+        flex-direction: row-reverse;
+    }
+
+    .teacher-1 .teacher-content-description,
+    .teacher-3 .teacher-content-description {
+        margin-right: 20px;
+    }
+
+    .teacher-2 .teacher-content-description,
+    .teacher-4 .teacher-content-description {
+        margin-left: 20px;
+    }
+
+    .teacher-content-description h1{
+        font-size: 1.4rem;
+    }
+    .teacher-content-description h2 {
+        font-size: 0.8rem;
+    }
+
+    .teacher-img {
+        height: 140px;
+        width: 140px;
+    }
+
+    .teacher-img img {
+        height: 130px;
+        width: 130px;
+    }
+
+    .teachers-container h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .teachers-container h1{
+        margin: 10px 0 20px 0;
+    }
+}*/

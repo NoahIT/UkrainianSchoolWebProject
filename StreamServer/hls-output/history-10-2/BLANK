@@ -1,0 +1,6 @@
+﻿namespace StreamServer.hls_output.math_10
+{
+    public class BLANK
+    {
+    }
+}
